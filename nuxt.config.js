@@ -31,6 +31,9 @@ export default {
   */
   plugins: [
   ],
+  router: {
+    middleware: ['auth']
+  },
   /*
   ** Nuxt.js dev-modules
   */
@@ -52,6 +55,19 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+  },
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: '/api/auth/login', method: 'post', propertyName: 'token' },
+          logout: { url: '/api/auth/logout', method: 'post' },
+          user: {url: 'users/current', method: 'get', propertyName: false}
+        },
+        // tokenRequired: true,
+        // tokenType: 'bearer'
+      }
+    }
   },
   /*
   ** vuetify module configuration
