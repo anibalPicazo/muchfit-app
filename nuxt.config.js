@@ -1,7 +1,9 @@
 import colors from 'vuetify/es5/util/colors'
 
 export default {
-
+  env: {
+    BASE_URL: process.env.BASE_URL || 'http://localhost:8000/api'
+  },
   mode: 'universal',
   /*
   ** Headers of the page
@@ -45,13 +47,38 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
+    '@nuxtjs/vuetify',
+    // Doc: https://axios.nuxtjs.org/usage
+    '@nuxtjs/auth',
   ],
+  router: {
+    middleware: ['auth']
+  },
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: '/auth', method: 'post', propertyName: 'token' },
+          logout: false,
+        },
+        // tokenRequired: true,
+        // tokenType: 'bearer'
+      }
+    },
+    redirect: {
+      login: '/login',
+      logout: '/',
+      home: '/home',
+      user: '/home',
+    }
+  },
+
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-
+    baseURL: process.env.BASE_URL
   },
   /*
   ** vuetify module configuration
