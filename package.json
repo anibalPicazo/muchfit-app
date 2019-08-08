@@ -1,7 +1,7 @@
 {
-  "name": "mf",
+  "name": "skeleton",
   "version": "1.0.0",
-  "description": "My world-class Nuxt.js project",
+  "description": "My wonderful Nuxt.js project",
   "author": "Anibal",
   "private": true,
   "scripts": {
@@ -15,5 +15,7 @@
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/pwa": "^3.0.0-0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@nuxtjs/vuetify": "^1.0.0"
+  }
 }

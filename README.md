@@ -1,6 +1,6 @@
-# mf
+# skeleton
 
-> My world-class Nuxt.js project
+> My wonderful Nuxt.js project
 
 ## Build Setup
 
