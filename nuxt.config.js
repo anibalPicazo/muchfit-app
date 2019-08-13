@@ -1,4 +1,5 @@
 import colors from 'vuetify/es5/util/colors'
+require('dotenv').config()
 
 export default {
   env: {
@@ -59,7 +60,7 @@ export default {
     strategies: {
       local: {
         endpoints: {
-          login: { url: '/auth', method: 'post', propertyName: 'token' },
+          login: { url: 'auth', method: 'post', propertyName: 'token' },
           logout: false,
         },
         // tokenRequired: true,

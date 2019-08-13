@@ -49,17 +49,18 @@
     methods: {
       submit() {
         this.$v.$touch();
-        if(this.$v.$error) this.login();
+        if(!this.$v.$error)this.login();
 
       },
       login: async function () {
         try {
+          console.log("entra al li")
           let data = await this.$auth.loginWith('local', {
             data: {
               username: this.username,
               password: this.password
             }
-          })
+          });
         } catch (e) {
           console.log(e)
           this.error = e.response.data.message
