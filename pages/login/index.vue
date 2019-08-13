@@ -49,12 +49,11 @@
     methods: {
       submit() {
         this.$v.$touch();
-        if(!this.$v.$error)this.login();
+        if(!this.$v.$invalid)this.login();
 
       },
       login: async function () {
         try {
-          console.log("entra al li")
           let data = await this.$auth.loginWith('local', {
             data: {
               username: this.username,
