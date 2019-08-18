@@ -1,8 +1,9 @@
 <template>
+
         <v-container fill-height >
             <v-layout align-center justify-center>
                 <v-flex xs12 sm8 md4>
-                    <h1 class="text-center mb-8 secondary--text">Acceso</h1>
+                    <h1>Acceso</h1>
                     <form>
                         <v-text-field
                                 v-model="username"
@@ -70,5 +71,7 @@
 </script>
 
 <style scoped>
+
+
 
 </style>

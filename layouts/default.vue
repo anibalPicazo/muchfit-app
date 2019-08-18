@@ -1,5 +1,6 @@
 <template>
-  <v-app dark>
+  <div class="back">
+  <v-app id="inspire">
     <toolbar></toolbar>
     <v-content>
       <v-container>
@@ -7,6 +8,7 @@
       </v-container>
     </v-content>
   </v-app>
+  </div>
 </template>
 
 <script>
@@ -16,3 +18,13 @@ export default {
 
 }
 </script>
+<style>
+
+  .back {
+    background-image: url("../assets/images/black_background.jpg");
+    background-size: cover;
+  }
+  #inspire {
+    background: none;
+  }
+</style>

@@ -1,6 +1,7 @@
 import colors from 'vuetify/es5/util/colors'
 require('dotenv').config()
 
+
 export default {
   env: {
     BASE_URL: process.env.BASE_URL || 'http://localhost:8000/api'
@@ -18,7 +19,7 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
     ]
   },
   /*
@@ -29,6 +30,7 @@ export default {
   ** Global CSS
   */
   css: [
+    '@assets/css/main.css'
   ],
   /*
   ** Plugins to load before mounting the App
