@@ -1,8 +1,11 @@
 <template>
 
-        <v-container fill-height >
-            <v-layout align-center justify-center>
-                <v-flex xs12 sm8 md4>
+            <v-layout align-center justify-center column >
+              <v-flex>
+                <img src="../../assets/images/logov1peq.png" alt="">
+              </v-flex>
+              <v-flex xs12 sm8 md7 >
+
                     <h1>Acceso</h1>
                     <form>
                         <v-text-field
@@ -22,7 +25,6 @@
                     </form>
                 </v-flex>
             </v-layout>
-        </v-container>
 </template>
 
 <script>

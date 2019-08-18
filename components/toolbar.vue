@@ -40,7 +40,8 @@
       app
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-toolbar-title v-text="title" />
+
+      <v-avatar><img src="../assets/images/logov1peq.png" alt="avatar"></v-avatar>
     </v-app-bar>
 
   </div>
