@@ -1,23 +1,24 @@
 <template>
               <v-layout align-center justify-center row xs12 fill-height
                         class="a">
+
                 <v-layout align-center justify-center column fill-height class="b">
 
                 </v-layout>
-
-                      <v-layout align-center justify-center column fill-height class="c">
-                      <v-flex>
-                        <img src="../../assets/images/logov1peq.png" alt="">
+                      <v-layout align-center justify-items-center column fill-height>
+                      <v-flex >
+                          <img src="../../assets/images/raptorlogo.png" alt=""  width="220" height="175">
                       </v-flex>
                       <v-flex>
 
-                        <h1>Acceso</h1>
+                        <h2>Login de usuario</h2>
                         <form>
                           <v-text-field
                             v-model="username"
                             outlined
                             label="Usuario"
                             required
+                            color="grey"
                           ></v-text-field>
                           <v-text-field
                             v-model="password"
@@ -25,13 +26,13 @@
                             label="Contraseña"
                             outlined
                             required
+                            color="grey"
                           ></v-text-field>
                           <register-component></register-component>
                           <v-btn block large color="primary" @click="submit">Acceder</v-btn>
                         </form>
                       </v-flex>
                       </v-layout>
-
               </v-layout>
 
 </template>
@@ -89,9 +90,11 @@
 </script>
 
 <style scoped>
-
-
-.b{
-  background-image: url("../../assets/images/dumbell.jpg");
+  .a{
+    background: white;
+  }
+.b {
+  background-image: url("../../assets/images/boxing.png");
+  background-size: auto;
 }
 </style>
