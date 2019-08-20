@@ -1,37 +1,39 @@
 <template>
-  <v-container>
-              <v-layout align-center justify-center column >
-                <v-row>
+              <v-layout align-center justify-center row xs12 fill-height
+                        class="a">
+                <v-layout align-center justify-center column fill-height class="b">
 
-                </v-row>
-                    <v-flex>
+                </v-layout>
+
+                      <v-layout align-center justify-center column fill-height class="c">
+                      <v-flex>
                         <img src="../../assets/images/logov1peq.png" alt="">
-                    </v-flex>
-                    <v-flex>
+                      </v-flex>
+                      <v-flex>
 
-                      <h1>Acceso</h1>
-                      <form>
+                        <h1>Acceso</h1>
+                        <form>
                           <v-text-field
-                                  v-model="username"
-                                  outlined
-                                  label="Usuario"
-                                  required
+                            v-model="username"
+                            outlined
+                            label="Usuario"
+                            required
                           ></v-text-field>
                           <v-text-field
-                                  v-model="password"
-                                  type="password"
-                                  label="Contraseña"
-                                  outlined
-                                  required
+                            v-model="password"
+                            type="password"
+                            label="Contraseña"
+                            outlined
+                            required
                           ></v-text-field>
-                        <register-component></register-component>
+                          <register-component></register-component>
                           <v-btn block large color="primary" @click="submit">Acceder</v-btn>
-                      </form>
-              </v-flex>
+                        </form>
+                      </v-flex>
+                      </v-layout>
 
               </v-layout>
 
-  </v-container>
 </template>
 <script>
   import {required} from 'vuelidate/lib/validators'
@@ -89,5 +91,7 @@
 <style scoped>
 
 
-
+.b{
+  background-image: url("../../assets/images/dumbell.jpg");
+}
 </style>

@@ -1,14 +1,12 @@
 <template>
-  <div class="back">
   <v-app id="inspire">
     <toolbar></toolbar>
     <v-content>
-      <v-container>
+
         <nuxt />
-      </v-container>
+
     </v-content>
   </v-app>
-  </div>
 </template>
 
 <script>
@@ -25,6 +23,6 @@ export default {
     background-size: cover;
   }
   #inspire {
-    background: none;
+    background-image: url("../assets/images/black_background.jpg");
   }
 </style>
