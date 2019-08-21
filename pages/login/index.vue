@@ -1,14 +1,16 @@
 <template>
               <v-layout align-center justify-center row fill-height>
-
+                <v-flex fill-height xs0 sm4>
                 <v-layout align-center justify-center  fill-height class="b">
 
                 </v-layout>
+                </v-flex >
+                <v-flex fill-height xs12 sm8>
                       <v-layout align-center justify-items-center column fill-height>
                       <v-flex >
                           <img src="../../assets/images/raptorlogo.png" alt=""  width="220" height="175">
                       </v-flex>
-                      <v-flex>
+                      <v-flex >
 
                         <h2>Login de usuario</h2>
                         <form>
@@ -32,6 +34,7 @@
                         </form>
                       </v-flex>
                       </v-layout>
+                </v-flex>
               </v-layout>
 
 </template>
@@ -90,10 +93,11 @@
 
 <style scoped>
   .a{
-    background: white;
+    background: blue;
   }
 .b {
   background-image: url("../../assets/images/boxing.png");
   background-size: auto;
+  ;
 }
 </style>
