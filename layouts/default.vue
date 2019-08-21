@@ -18,11 +18,8 @@ export default {
 </script>
 <style>
 
-  .back {
-    background-image: url("../assets/images/black_background.jpg");
-    background-size: cover;
-  }
   #inspire {
-    background-image: url("../assets/images/black_background.jpg");
+    background: white;
+    font-family: "IBM Plex Serif",serif;
   }
 </style>

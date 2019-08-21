@@ -1,8 +1,7 @@
 <template>
-              <v-layout align-center justify-center row xs12 fill-height
-                        class="a">
+              <v-layout align-center justify-center row fill-height>
 
-                <v-layout align-center justify-center column fill-height class="b">
+                <v-layout align-center justify-center  fill-height class="b">
 
                 </v-layout>
                       <v-layout align-center justify-items-center column fill-height>
