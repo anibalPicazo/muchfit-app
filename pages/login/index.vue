@@ -3,6 +3,9 @@
                 <v-flex fill-height xs0 sm4>
                 <v-layout align-center justify-center  fill-height class="b">
 
+                      <carousel-component hidden--xs--only></carousel-component>
+
+
                 </v-layout>
                 </v-flex >
                 <v-flex fill-height xs12 sm8>
@@ -41,8 +44,9 @@
 <script>
   import {required} from 'vuelidate/lib/validators'
   import  registerComponent from '../../components/register/registerComponent'
+  import carouselComponent from '../../components/ui/carouselComponent'
   export default {
-    components: { registerComponent },
+    components: { registerComponent,carouselComponent },
     name: "login",
     data() {
       return {
@@ -50,6 +54,7 @@
         password: '',
         register: true,
         dialog: false,
+
       }
 
 
@@ -98,6 +103,5 @@
 .b {
   background-image: url("../../assets/images/boxing.png");
   background-size: auto;
-  ;
 }
 </style>
