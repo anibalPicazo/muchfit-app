@@ -2,10 +2,7 @@
               <v-layout align-center justify-center row fill-height>
                 <v-flex fill-height xs0 sm4>
                 <v-layout align-center justify-center  fill-height class="b">
-
                       <carousel-component hidden--xs--only></carousel-component>
-
-
                 </v-layout>
                 </v-flex >
                 <v-flex fill-height xs12 sm8>
