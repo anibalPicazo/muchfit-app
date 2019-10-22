@@ -2,7 +2,7 @@
               <v-layout align-center justify-center row fill-height>
                 <v-flex fill-height xs0 sm4>
                 <v-layout align-center justify-center  fill-height class="b">
-                      <carousel-component hidden--xs--only></carousel-component>
+<!--                      <carousel-component hidden&#45;&#45;xs&#45;&#45;only></carousel-component>-->
                 </v-layout>
                 </v-flex >
                 <v-flex fill-height xs12 sm8>
@@ -73,6 +73,7 @@
       },
       login: async function () {
         try {
+            console.log('loging');
           let data = await this.$auth.loginWith('local', {
             data: {
               username: this.username,
@@ -94,11 +95,9 @@
 </script>
 
 <style scoped>
-  .a{
-    background: blue;
-  }
+
 .b {
   background-image: url("../../assets/images/boxing.png");
-  background-size: auto;
+  background-size: cover;
 }
 </style>

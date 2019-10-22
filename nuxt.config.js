@@ -62,18 +62,19 @@ export default {
     strategies: {
       local: {
         endpoints: {
-          login: { url: 'auth', method: 'post', propertyName: 'token' },
+          login: { url: '/auth', method: 'post', propertyName: 'token' },
           logout: false,
-        },
+          user: {url: "/users/current", method: "get", propertyName: false}
+        }
         // tokenRequired: true,
         // tokenType: 'bearer'
       }
     },
     redirect: {
-      login: '/login',
-      logout: '/',
-      home: '/home',
-      user: '/home',
+      login: "/login",
+      logout: "/",
+      home: "/home",
+      user: "/home",
     }
   },
 

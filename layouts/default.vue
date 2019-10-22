@@ -20,6 +20,6 @@ export default {
 
   #inspire {
     background: white;
-    font-family: "IBM Plex Serif",serif;
+    font-family: "Roboto Light",serif;
   }
 </style>
