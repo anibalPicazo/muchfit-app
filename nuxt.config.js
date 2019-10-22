@@ -72,9 +72,9 @@ export default {
     },
     redirect: {
       login: "/login",
-      logout: "/",
-      home: "/home",
-      user: "/home",
+      logout: "/login",
+      home: "/dashboard",
+      user: "/dasboard",
     }
   },
 
@@ -117,3 +117,4 @@ export default {
     }
   }
 }
+
