@@ -48,12 +48,10 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/vuetify',
-    // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/auth',
+    '@nuxtjs/auth'
   ],
   router: {
     middleware: ['auth']
@@ -62,19 +60,19 @@ export default {
     strategies: {
       local: {
         endpoints: {
-          login: { url: '/auth', method: 'post', propertyName: 'token' },
+          login: {url: "/auth", method: "post", propertyName: "token"},
           logout: false,
           user: {url: "/users/current", method: "get", propertyName: false}
-        }
+        },
         // tokenRequired: true,
         // tokenType: 'bearer'
       }
     },
     redirect: {
       login: "/login",
-      logout: "/login",
+      logout: "/",
       home: "/dashboard",
-      user: "/dasboard",
+      user: "/dashboard"
     }
   },
 

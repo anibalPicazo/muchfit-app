@@ -20,6 +20,6 @@ export default {
 
   #inspire {
     background: white;
-    font-family: "Roboto Light",serif;
+    font-family: "Roboto", serif;
   }
 </style>
