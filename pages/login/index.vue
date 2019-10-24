@@ -1,15 +1,17 @@
 <template>
-              <v-layout align-center justify-center row fill-height>
-                <v-flex fill-height xs0 sm4>
-                <v-layout align-center justify-center  fill-height class="b">
-<!--                      <carousel-component hidden&#45;&#45;xs&#45;&#45;only></carousel-component>-->
-                </v-layout>
+              <v-layout align-center fill-height>
+                <v-flex class="d-none d-sm-flex b" md4 fill-height>
+
                 </v-flex >
-                <v-flex fill-height xs12 sm8>
+                <v-flex  xs12 sm8>
                       <v-layout align-center justify-items-center column fill-height>
-                      <v-flex >
-                          <img src="../../assets/images/raptorlogo.png" alt=""  width="220" height="175">
-                      </v-flex>
+<!--                      <v-flex >-->
+<!--                          <img src="../../assets/images/raptorlogo.png" alt=""  width="220" height="175">-->
+<!--                      </v-flex>-->
+
+                        <div style="width: 200px; border-radius: 10px; margin: auto; margin-bottom: 40px !important;">
+                          <img src="../../assets/images/raptorlogo.png" style="width: 200px; padding-top: 5px; padding-right: 12px;">
+                        </div>
                       <v-flex >
 
                         <h2>Login de usuario</h2>
@@ -97,7 +99,7 @@
 <style scoped>
 
 .b {
-  background-image: url("../../assets/images/boxing.png");
+  background-image: url("../../assets/images/runner.jpg");
   background-size: cover;
 }
 </style>
