@@ -21,7 +21,6 @@
                             outlined
                             label="Usuario"
                             required
-                            color="grey"
                           ></v-text-field>
                           <v-text-field
                             v-model="password"
@@ -29,10 +28,9 @@
                             label="Contraseña"
                             outlined
                             required
-                            color="grey"
                           ></v-text-field>
                           <register-component></register-component>
-                          <v-btn block large color="primary" @click="submit">Acceder</v-btn>
+                          <v-btn class="mt-3" rounded block large color="primary" @click="submit">Acceder</v-btn>
                         </form>
                       </v-flex>
                       </v-layout>
@@ -102,4 +100,5 @@
   background-image: url("../../assets/images/runner.jpg");
   background-size: cover;
 }
+
 </style>

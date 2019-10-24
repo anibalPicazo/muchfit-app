@@ -1,7 +1,7 @@
 <template>
 <v-dialog v-model="dialog" persistent max-width="600px">
   <template v-slot:activator="{ on }">
-    <v-btn  block large dark v-on="on">Registro</v-btn>
+    <v-btn rounded block large dark v-on="on">Registro</v-btn>
   </template>
   <v-card>
     <v-card-title>
