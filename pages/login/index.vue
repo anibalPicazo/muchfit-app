@@ -3,11 +3,9 @@
                 <v-flex class="d-none d-sm-flex b" md4 fill-height>
 
                 </v-flex >
-                <v-flex  xs12 sm8>
-                      <v-layout align-center justify-items-center column fill-height>
-<!--                      <v-flex >-->
-<!--                          <img src="../../assets/images/raptorlogo.png" alt=""  width="220" height="175">-->
-<!--                      </v-flex>-->
+                <v-flex  xs12 md7>
+                  <div style="max-width: 40%; margin: auto; text-align: center;">
+
 
                         <div style="width: 200px; border-radius: 10px; margin: auto; margin-bottom: 40px !important;">
                           <img src="../../assets/images/raptorlogo.png" style="width: 200px; padding-top: 5px; padding-right: 12px;">
@@ -33,7 +31,7 @@
                           <v-btn class="mt-3" rounded block large color="primary" @click="submit">Acceder</v-btn>
                         </form>
                       </v-flex>
-                      </v-layout>
+                  </div>
                 </v-flex>
               </v-layout>
 
