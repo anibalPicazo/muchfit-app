@@ -19,7 +19,10 @@ export default {
 <style>
 
   #inspire {
-    background: white;
+    background: whitesmoke;
     font-family: "Roboto", serif;
+
+    color: #47494e;
+
   }
 </style>
