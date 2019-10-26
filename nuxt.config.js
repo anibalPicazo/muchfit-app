@@ -1,7 +1,6 @@
 import colors from 'vuetify/es5/util/colors'
 require('dotenv').config()
 
-
 export default {
   env: {
     BASE_URL: process.env.BASE_URL || 'http://localhost:8000/api'
