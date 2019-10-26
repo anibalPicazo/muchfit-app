@@ -71,7 +71,6 @@
       },
       login: async function () {
         try {
-            console.log('loging');
           let data = await this.$auth.loginWith('local', {
             data: {
               username: this.username,
