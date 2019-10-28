@@ -3,12 +3,11 @@
       <v-container >
         <v-row >
          <v-col md="7" sm="12" >
+            <v-card>
               <v-card-title> Comidas recomendadas</v-card-title>
-
-           <v-row  justify="space-between" class="mx-auto">
+              <v-row justify="space-between" class="mb-3" >
              <v-col md="3"  sm="6">
                <v-card
-                 class="mx-auto"
                  max-width="200"
                  max-height="200"
                >
@@ -34,7 +33,6 @@
              </v-col>
              <v-col md="3"  sm="6">
                <v-card
-                 class="mx-auto"
                  max-width="200"
                  max-height="200"
                >
@@ -61,7 +59,6 @@
              </v-col>
              <v-col md="3"  sm="6">
                <v-card
-                 class="mx-a3"
                  max-width="200"
                  max-height="200"
                >
@@ -87,7 +84,8 @@
                </v-card>
 
              </v-col>
-           </v-row>
+             </v-row>
+            </v-card>
            <v-card elevation="3">
            <v-row class="mx-auto">
              <v-col md="6" sm="6">
