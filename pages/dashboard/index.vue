@@ -13,22 +13,21 @@
                  <v-img
                    class="white--text align-end"
                    height="200px"
-                   src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+                   :src="require('../../assets/images/ensalada.jpg')"
                  >
-                   <v-card-title>Lentejas</v-card-title>
+                   <v-card-title>Ensalada</v-card-title>
                  </v-img>
                  <v-card-actions>
-                   <v-btn
-                     color="orange"
-                     text
-                   >
+                   <v-btn>
+                     <v-icon>mdi-cards-heart</v-icon>
                    </v-btn>
 
-                   <v-btn
-                     color="orange"
-                     text
-                   >
-                     Explore
+                   <v-btn>
+                     <v-icon>mdi-tag-plus </v-icon>
+                   </v-btn>
+
+                   <v-btn>
+                     <v-icon>mdi-share-variant </v-icon>
                    </v-btn>
                  </v-card-actions>
                </v-card>
@@ -41,27 +40,21 @@
                  <v-img
                    class="white--text align-end"
                    height="200px"
-                   src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+                   :src="require('../../assets/images/frutos_rojos.jpg')"
                  >
                    <v-card-title>Frutos Rojos</v-card-title>
                  </v-img>
-
-
-
-
                  <v-card-actions>
-                   <v-btn
-                     color="orange"
-                     text
-                   >
-                     Share
+                   <v-btn>
+                     <v-icon>mdi-cards-heart</v-icon>
                    </v-btn>
 
-                   <v-btn
-                     color="orange"
-                     text
-                   >
-                     Explore
+                   <v-btn>
+                     <v-icon>mdi-tag-plus </v-icon>
+                   </v-btn>
+
+                   <v-btn>
+                     <v-icon>mdi-share-variant </v-icon>
                    </v-btn>
                  </v-card-actions>
                </v-card>
@@ -81,18 +74,16 @@
                  </v-img>
 
                  <v-card-actions>
-                   <v-btn
-                     color="orange"
-                     text
-                   >
-                     Share
+                   <v-btn>
+                     <v-icon>mdi-cards-heart</v-icon>
                    </v-btn>
 
-                   <v-btn
-                     color="orange"
-                     text
-                   >
-                     Explore
+                   <v-btn>
+                     <v-icon>mdi-tag-plus </v-icon>
+                   </v-btn>
+
+                   <v-btn>
+                     <v-icon>mdi-share-variant </v-icon>
                    </v-btn>
                  </v-card-actions>
                </v-card>
