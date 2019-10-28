@@ -3,8 +3,8 @@
       <v-container >
         <v-row >
          <v-col >
-
-           <v-row>
+              <v-card-title> Comidas recomendadas</v-card-title>
+           <v-row justify="space-between" class="mx-auto">
              <v-col md="3"  sm="6">
                <v-card
                  class="mx-auto"
@@ -18,17 +18,15 @@
                    <v-card-title>Ensalada</v-card-title>
                  </v-img>
                  <v-card-actions>
-                   <v-btn>
+                   <v-col>
                      <v-icon>mdi-cards-heart</v-icon>
-                   </v-btn>
-
-                   <v-btn>
+                   </v-col>
+                   <v-col>
                      <v-icon>mdi-tag-plus </v-icon>
-                   </v-btn>
-
-                   <v-btn>
-                     <v-icon>mdi-share-variant </v-icon>
-                   </v-btn>
+                   </v-col>
+                   <v-col>
+                     <v-icon>mdi-share-variant</v-icon>
+                   </v-col>
                  </v-card-actions>
                </v-card>
              </v-col>
@@ -42,20 +40,18 @@
                    height="200px"
                    :src="require('../../assets/images/frutos_rojos.jpg')"
                  >
-                   <v-card-title>Frutos Rojos</v-card-title>
+                   <v-card-title >Frutos Rojos</v-card-title>
                  </v-img>
                  <v-card-actions>
-                   <v-btn>
+                   <v-col>
                      <v-icon>mdi-cards-heart</v-icon>
-                   </v-btn>
-
-                   <v-btn>
+                   </v-col>
+                   <v-col>
                      <v-icon>mdi-tag-plus </v-icon>
-                   </v-btn>
-
-                   <v-btn>
-                     <v-icon>mdi-share-variant </v-icon>
-                   </v-btn>
+                   </v-col>
+                   <v-col>
+                     <v-icon>mdi-share-variant</v-icon>
+                   </v-col>
                  </v-card-actions>
                </v-card>
 
@@ -74,21 +70,24 @@
                  </v-img>
 
                  <v-card-actions>
-                   <v-btn>
+                   <v-col>
                      <v-icon>mdi-cards-heart</v-icon>
-                   </v-btn>
-
-                   <v-btn>
+                   </v-col>
+                   <v-col>
                      <v-icon>mdi-tag-plus </v-icon>
-                   </v-btn>
-
-                   <v-btn>
-                     <v-icon>mdi-share-variant </v-icon>
-                   </v-btn>
-                 </v-card-actions>
+                   </v-col>
+                   <v-col>
+                     <v-icon>mdi-share-variant</v-icon>
+                   </v-col>
+                </v-card-actions>
                </v-card>
 
              </v-col>
+           </v-row>
+           <v-row>
+             <v-card elevation="5">
+
+             </v-card>
            </v-row>
          </v-col>
           <v-col>
