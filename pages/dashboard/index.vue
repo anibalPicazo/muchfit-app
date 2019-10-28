@@ -2,17 +2,19 @@
   <div>
       <v-container >
         <v-row >
-         <v-col md="7" >
+         <v-col md="7" sm="12" >
               <v-card-title> Comidas recomendadas</v-card-title>
-           <v-row justify="space-between" class="mx-auto">
+
+           <v-row  justify="space-between" class="mx-auto">
              <v-col md="3"  sm="6">
                <v-card
                  class="mx-auto"
-                 max-width="400"
+                 max-width="200"
+                 max-height="200"
                >
                  <v-img
                    class="white--text align-end"
-                   height="200px"
+                   height="150px"
                    :src="require('../../assets/images/ensalada.jpg')"
                  >
                    <v-card-title>Ensalada</v-card-title>
@@ -33,11 +35,12 @@
              <v-col md="3"  sm="6">
                <v-card
                  class="mx-auto"
-                 max-width="400"
+                 max-width="200"
+                 max-height="200"
                >
                  <v-img
                    class="white--text align-end"
-                   height="200px"
+                   height="150px"
                    :src="require('../../assets/images/frutos_rojos.jpg')"
                  >
                    <v-card-title >Frutos Rojos</v-card-title>
@@ -59,11 +62,12 @@
              <v-col md="3"  sm="6">
                <v-card
                  class="mx-a3"
-                 max-width="400"
+                 max-width="200"
+                 max-height="200"
                >
                  <v-img
                    class="white--text align-end"
-                   height="200px"
+                   height="150px"
                    :src="require('../../assets/images/lentejas.jpg')"
                  >
                    <v-card-title>Lentejas</v-card-title>
@@ -148,6 +152,26 @@
              </v-col>
            </v-row>
            </v-card>
+           <v-card>
+           <v-row  class="mx-auto mt-5">
+             <v-toolbar dense class="vuely-toolbar">
+               <v-toolbar-title class="title-vuely">Visitas</v-toolbar-title>
+               <v-spacer></v-spacer>
+               <v-icon class="icon-toolbar">mdi-calendar</v-icon>
+             </v-toolbar>
+             <v-calendar
+               class="pa-1"
+               color="primary"
+               type="month"
+               now="2019-01-08"
+               value="2019-01-08"
+               :events="events"
+               :event-color="getEventColor"
+               locale="ES-ES"
+               first-day-of-week="1"
+             ></v-calendar>
+           </v-row>
+           </v-card>
 
          </v-col>
           <v-col>
@@ -170,10 +194,56 @@
                 66,
                 71,
             ],
+            events: [
+                {
+                    name: "Cert. 2019/05",
+                    start: "2018-12-30",
+                    end: "2019-01-02",
+                },
+                {
+                    name: "Visita",
+                    start: "2019-01-07",
+                },
+                {
+                    name: "Santiago Carrión Tercero",
+                    start: "2019-01-03",
+                },
+                {
+                    name: "Pedro Urbina",
+                    start: "2019-01-17",
+                    color: 'light-green'
+                },
+                {
+                    name: "Cooperativa Miria Hermanos",
+                    start: "2019-01-21",
+                },
+                {
+                    name: "Isabel Núñez Hijo",
+                    start: "2019-01-30",
+                    end: "2019-02-01",
+                    color: 'orange'
+
+                }
+            ],
         }),
+        methods: {
+            getEventColor(event) {
+                if (event.color) return event.color
+                else return 'light-blue'
+            },
+        }
     }
 </script>
 
 <style scoped>
-
+  .vuely-toolbar {
+    border: 0px !important;
+    -webkit-box-shadow: 0 1px 15px 1px rgba(69,65,78,.08) !important;
+    box-shadow: 0 1px 15px 1px rgba(69,65,78,.08) !important;
+    -webkit-transition: all .4s ease-in-out 0s !important;
+    transition: none !important;
+  }
+  .link {
+    cursor: pointer !important;
+  }
 </style>
