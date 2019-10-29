@@ -176,8 +176,9 @@
             <v-card
               class="mx-auto"
             >
-            <v-row>
-              <v-card-title> Acciones rapidas</v-card-title>
+              <v-card-title> Enrenamiento de hoy</v-card-title>
+
+              <v-row justify="end">
 
 
               <v-list
@@ -203,23 +204,32 @@
 
             </v-row>
             </v-card>
-            <v-card
-              class="mx-auto"
-              tile
-            >
+            <v-card class="mt-3">
+              <v-card-title> Menú rapido</v-card-title>
+            <v-row justify="space-around" >
+              <v-icon large color="green darken-2">mdi-domain</v-icon>
+
+              <v-icon large color="blue darken-2">mdi-message-text</v-icon>
+
+              <v-icon large color="purple darken-2">mdi-dialpad</v-icon>
+
+              <v-icon large color="teal darken-2">mdi-email</v-icon>
+
+              <v-icon large color="blue-grey darken-2">mdi-call-split</v-icon>
+
+              <v-icon large color="orange darken-2">mdi-arrow-up-bold-box-outline</v-icon>
+
+            </v-row>
+            </v-card>
+
+
+
+        <v-card>
               <v-row>
-                <v-card-title> Acciones rapidas</v-card-title>
-                <v-col>
 
-                </v-col>
-                <v-col>
-
-                </v-col>
-                <v-col>
-
-                </v-col>
               </v-row>
             </v-card>
+
 
           </v-col>
         </v-row>
