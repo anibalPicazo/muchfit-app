@@ -153,7 +153,7 @@
            <v-card>
            <v-row  class="mx-auto mt-5">
              <v-toolbar dense class="vuely-toolbar">
-               <v-toolbar-title class="title-vuely">Visitas</v-toolbar-title>
+               <v-toolbar-title class="title-vuely">Planificador entrenamiento</v-toolbar-title>
                <v-spacer></v-spacer>
                <v-icon class="icon-toolbar">mdi-calendar</v-icon>
              </v-toolbar>
@@ -221,14 +221,33 @@
 
             </v-row>
             </v-card>
-
-
-
-        <v-card>
+            <v-card class="mt-3">
               <v-row>
 
+                  <v-list-item three-line>
+                    <v-list-item-content>
+                      <div class="overline mb-4" style="color: #1db817">Online</div>
+                      <v-list-item-title class="headline mb-1">Mateo Sánchez</v-list-item-title>
+                      <v-list-item-subtitle>Entrenador personal y nutricionista</v-list-item-subtitle>
+                    </v-list-item-content>
+                    <v-list-item-avatar size="150px">
+                      <v-img
+                        class="white--text align-end mt-12"
+                        :src="require('../../assets/images/trainer.jpg')"
+                      >
+
+                      </v-img>
+
+                    </v-list-item-avatar>
+                  </v-list-item>
+
+                  <v-card-actions>
+                    <v-btn text>Llamar</v-btn>
+                    <v-btn text>Correo</v-btn>
+                  </v-card-actions>
               </v-row>
             </v-card>
+
 
 
           </v-col>
