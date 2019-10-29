@@ -1,6 +1,7 @@
 <template>
   <div>
     <v-navigation-drawer
+      color="grey darken-3"
       v-model="drawer"
       :mini-variant="miniVariant"
       :clipped="clipped"
@@ -38,6 +39,7 @@
       :clipped-left="clipped"
       fixed
       app
+      color="grey darken-3"
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
 
