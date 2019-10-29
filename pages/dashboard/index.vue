@@ -172,7 +172,54 @@
            </v-card>
 
          </v-col>
-          <v-col>
+          <v-col md="5" sm="12">
+            <v-card
+              class="mx-auto"
+            >
+            <v-row>
+              <v-card-title> Acciones rapidas</v-card-title>
+
+
+              <v-list
+                  three-line="three-line"
+                  shaped
+                  rounded
+                >
+                  <v-list-item-group v-model="item" color="primary">
+                    <v-list-item
+                      v-for="(item, i) in items"
+                      :key="i"
+                    >
+                      <v-list-item-avatar v-if="avatar">
+                        <v-img :src="item.avatar"></v-img>
+                      </v-list-item-avatar>
+                      <v-list-item-content>
+                        <v-list-item-title v-html="item.title"></v-list-item-title>
+                        <v-list-item-subtitle v-if="threeLine" v-html="item.subtitle"></v-list-item-subtitle>
+                      </v-list-item-content>
+                    </v-list-item>
+                  </v-list-item-group>
+                </v-list>
+
+            </v-row>
+            </v-card>
+            <v-card
+              class="mx-auto"
+              tile
+            >
+              <v-row>
+                <v-card-title> Acciones rapidas</v-card-title>
+                <v-col>
+
+                </v-col>
+                <v-col>
+
+                </v-col>
+                <v-col>
+
+                </v-col>
+              </v-row>
+            </v-card>
 
           </v-col>
         </v-row>
@@ -223,6 +270,41 @@
 
                 }
             ],
+            item: 6,
+            items: [
+                {
+                    avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg',
+                    title: 'Pecho',
+                    subtitle: "<span class='text--primary'>3 series x 12 reps</span> &mdash; Press Banca, Fondos en paralelas lastrados, flexiones explosivas",
+                },
+                {
+                    avatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg',
+                    title: 'Espalda <span class="grey--text text--lighten-1"></span>',
+                    subtitle: "<span class='text--primary'>4 series en 12-10-8-6 reps</span> &mdash; Dominadas lastradas, Peso muerto y Remo con mancuerna",
+                },
+                {
+                    avatar: 'https://cdn.vuetifyjs.com/images/lists/3.jpg',
+                    title: 'Triceps',
+                    subtitle: "<span class='text--primary'>4 series en 12-10-8-6 reps</span> &mdash;Extensión de codos sentado, Extensión a una mano con mancuerna ",
+                },
+                {
+                    avatar: 'https://cdn.vuetifyjs.com/images/lists/4.jpg',
+                    title: 'Biceps',
+                    subtitle: "<span class='text--primary'>3 series x 12 reps</span> &mdash; Curl de biceps, Misionero, Dominadas con agarre supino lastradas",
+                },
+                {
+                    avatar: 'https://cdn.vuetifyjs.com/images/lists/5.jpg',
+                    title: 'Cardio',
+                    subtitle: "<span class='text--primary'>15 minutos</span> &mdash; Eliptica, Cinta de correr y escalada ",
+                },
+                {
+                    avatar: 'https://cdn.vuetifyjs.com/images/lists/5.jpg',
+                    title: 'Abdominales',
+                    subtitle: "<span class='text--primary'> 3 series x 12 reps</span> &mdash; Crunch abdominal, Plancha 40 segundos, Rueda ",
+                },
+            ],
+            threeLine: true,
+            avatar:false
         }),
         methods: {
             getEventColor(event) {
