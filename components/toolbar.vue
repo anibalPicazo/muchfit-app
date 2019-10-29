@@ -15,9 +15,18 @@
               <v-img src="https://randomuser.me/api/portraits/men/85.jpg"></v-img>
             </v-avatar>
           </v-flex>
-          <v-flex>
+          <v-flex class="mt-3">
             <p style="color: white"> Anibal Picazo </p>
+            <v-spacer></v-spacer>
+            <v-list-item class="ma-1 shadow-1 ml-4">
+              <v-list-item-content>
+                <div class="overline">
+                 <v-btn color="grey darken-3" elevation="0" @click="logout"> <v-icon color="error" class="mr-3">mdi-location-exit</v-icon></v-btn>
+                </div>
+              </v-list-item-content>
+            </v-list-item>
           </v-flex>
+
         </v-layout>
         <v-list-item
           v-for="(item, i) in items"
@@ -92,6 +101,12 @@
         miniVariant: false,
         title: 'Much Fit'
       }
+    },
+    methods:{
+        logout() {
+            this.$auth.logout()
+            this.$router.push("/login")
+        },
     }
   }
 </script>
