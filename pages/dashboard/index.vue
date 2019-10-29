@@ -270,29 +270,29 @@
             ],
             events: [
                 {
-                    name: "Cert. 2019/05",
+                    name: "Descanso",
                     start: "2018-12-30",
                     end: "2019-01-02",
                 },
                 {
-                    name: "Visita",
+                    name: "Full body dia A",
                     start: "2019-01-07",
                 },
                 {
-                    name: "Santiago Carrión Tercero",
+                    name: "Full body dia A",
                     start: "2019-01-03",
                 },
                 {
-                    name: "Pedro Urbina",
+                    name: "Full body dia B",
                     start: "2019-01-17",
                     color: 'light-green'
                 },
                 {
-                    name: "Cooperativa Miria Hermanos",
+                    name: "Full body dia A",
                     start: "2019-01-21",
                 },
                 {
-                    name: "Isabel Núñez Hijo",
+                    name: "Vacaiones",
                     start: "2019-01-30",
                     end: "2019-02-01",
                     color: 'orange'
