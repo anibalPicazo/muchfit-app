@@ -1,5 +1,4 @@
 <template>
-  <v-container>
 </template>
 
 <script>
