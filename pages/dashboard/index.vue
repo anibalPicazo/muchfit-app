@@ -1,6 +1,6 @@
 <template>
   <div>
-      <v-container >
+      <v-container fluid>
         <v-row >
          <v-col md="7" sm="12" >
             <v-card>
