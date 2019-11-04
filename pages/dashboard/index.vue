@@ -5,10 +5,9 @@
          <v-col md="7" sm="12" >
             <v-card>
               <v-card-title> Comidas recomendadas</v-card-title>
-              <v-row justify="space-between" class="mb-3" >
-             <v-col md="3"  sm="6">
+              <v-row justify="space-between" class="mb-3 pa-3" >
+             <v-col md="3"  sm="12">
                <v-card
-                 max-width="200"
                  max-height="200"
                >
                  <v-img
@@ -31,9 +30,8 @@
                  </v-card-actions>
                </v-card>
              </v-col>
-             <v-col md="3"  sm="6">
+             <v-col md="3"  sm="12">
                <v-card
-                 max-width="200"
                  max-height="200"
                >
                  <v-img
@@ -57,9 +55,8 @@
                </v-card>
 
              </v-col>
-             <v-col md="3"  sm="6">
+             <v-col md="3"  sm="12">
                <v-card
-                 max-width="200"
                  max-height="200"
                >
                  <v-img
@@ -91,26 +88,26 @@
              <v-col md="6" sm="6">
                <v-row>
                  <div class="text-center ma-12">
-                   Entrenamientos realizados
+                   <p>Entrenamientos realizados</p>
                  <v-progress-circular
                    :rotate="45"
-                   :size="49"
-                   :value="42"
+                   :size="82"
+                   :value="82"
                    :width="12"
                    color="light-blue"
-                 >32</v-progress-circular>
+                 >82</v-progress-circular>
                  </div>
                </v-row>
                <v-row>
                  <div class="text-center ma-12">
-                   Entrenamientos realizados:
+                   <p>Entenamientos saltados</p>
                    <v-progress-circular
                      :rotate="45"
-                     :size="49"
-                     :value="42"
+                     :size="82"
+                     :value="18"
                      :width="12"
                      color="pink lighten-1"
-                   >32</v-progress-circular>
+                   >12</v-progress-circular>
                  </div>
                </v-row>
              </v-col>
@@ -178,13 +175,14 @@
             >
               <v-card-title> Enrenamiento de hoy</v-card-title>
 
-              <v-row justify="end">
+              <v-row justify="center">
 
 
               <v-list
                   three-line="three-line"
                   shaped
                   rounded
+                  max-width="450"
                 >
                   <v-list-item-group v-model="item" color="primary">
                     <v-list-item
@@ -222,6 +220,7 @@
             </v-row>
             </v-card>
             <v-card class="mt-3">
+              <v-card-title>Contacto</v-card-title>
               <v-row>
 
                   <v-list-item three-line>
