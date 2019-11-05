@@ -1,83 +1,61 @@
 <template>
   <v-container fluid>
-    <v-row >
-      <v-col sm="12" md="6">
-        <v-card class="mt-5" elevation="10">
+    <v-row justify="center"  fill >
+      <v-col cols="12"  sm="6" md="4">
+        <v-card class="mt-5" elevation="10" height="650px">
           <v-sheet
             class="v-sheet--offset ml-4"
             color="blue"
             elevation="8"
-            max-width="calc(100% - 500px)"
             height="40px"
           >
-            <v-icon large color="white">mdi-progress-clock </v-icon><span style="color: white"> Experiencia</span>
+            <v-icon large color="white">mdi-progress-clock </v-icon><span style="color: white"> Test de entranmiento</span>
           </v-sheet>
           <v-row>
             <v-col md="12" sm="12">
               <v-card-text>
-                <v-col cols="12" sm="6" md="4">
-                  <v-text-field label="Legal first name*" required></v-text-field>
-                </v-col>
-                <v-col cols="12">
-                  <v-text-field label="Email*" required></v-text-field>
-                </v-col>
-                <v-col cols="12" sm="6">
-                </v-col>
-                <v-col cols="12" sm="6">
-                  <v-autocomplete
-                    :items="['Skiing', 'Ice hockey', 'Soccer', 'Basketball', 'Hockey', 'Reading', 'Writing', 'Coding', 'Basejump']"
-                    label="Interests"
-                    multiple
-                  ></v-autocomplete>
-                </v-col>
-              </v-card-text>
-            </v-col>
-          </v-row>
-        </v-card>
-      </v-col>
-      <v-col sm="12" md="6">
-        <v-card class="mt-5" elevation="10" >
-          <v-sheet
-            class="v-sheet--offset ml-4"
-            color="blue"
-            elevation="8"
-            max-width="calc(100% - 500px)"
-            height="40px"
-          >
-            <v-icon large color="white">mdi-progress-clock </v-icon><span style="color: white"> Frecuencia de entrenamiento</span>
-          </v-sheet>
-          <v-row>
-            <v-col md="12" sm="12">
-              <v-card-text>
-                <v-col cols="12" sm="6" md="4">
-                  <v-text-field label="Legal first name*" required></v-text-field>
-                </v-col>
-                <v-col cols="12">
-                  <v-text-field label="Email*" required></v-text-field>
-                </v-col>
-                <v-col cols="12" sm="6">
-                </v-col>
-                <v-col cols="12" sm="6">
-                  <v-autocomplete
-                    :items="['Skiing', 'Ice hockey', 'Soccer', 'Basketball', 'Hockey', 'Reading', 'Writing', 'Coding', 'Basejump']"
-                    label="Interests"
-                    multiple
-                  ></v-autocomplete>
-                </v-col>
-              </v-card-text>
-            </v-col>
-          </v-row>
-        </v-card>
+                <span>
+                  Bienvenido al teste de entrenamiento, con estos sencillos pasos calcularemos cual seria la rutina ideal,
+                  porfavor realice el test con la maxima sinceridad para asi poder recomendarle de maneras mas efectiva
+                  una rutina de entrenamiento. Si tiene alguna patlogía porfavor consulterlo con su medico.
+                </span>
+                <h2 class="mt-3"> Cuestionario </h2>
+                <v-col class="mt-3">
 
+                  <v-autocomplete
+                    :items="['De 0 a 2 meses', 'De 2 a 8 meses', '8 meses - 1 año y medio', 'Más de un año']"
+                    label="Experiencia en el gimasio"
+                  ></v-autocomplete>
+                </v-col>
+                <v-col>
+                  <v-autocomplete
+                    :items="['1-2 días', '2-3 días', 'más 3 dóas']"
+                    label="Frecuencia de entrenamiento"
+                  ></v-autocomplete>
+                </v-col>
+                <v-col >
+                </v-col>
+                <v-col>
+                  <v-autocomplete
+                    :items="['Muy Bajo', 'Bajo', 'Medio','Alto']"
+                    label="Estado físico percibido"
+                  ></v-autocomplete>
+                </v-col>
+              </v-card-text>
+            </v-col>
+
+          </v-row>
+        </v-card>
       </v-col>
     </v-row>
-
   </v-container>
 </template>
 
 <script>
     export default {
-        name: "index.vue"
+        name: "index.vue",
+        layout: "test"
+
     }
 </script>
 
