@@ -2,7 +2,7 @@
   <v-container fluid>
     <v-row justify="center"  fill >
       <v-col cols="12"  sm="9" md="9">
-        <v-card class="mt-5" elevation="10" height="650px">
+        <v-card class="mt-5" elevation="10" height="1000px">
           <v-sheet
             class="v-sheet--offset ml-4"
             color="blue"
@@ -54,6 +54,86 @@
               </v-card-text>
             </v-col>
 
+          </v-row>
+          <span> ¿Con que físico te ves identificado?</span>
+          <v-row justify="center" >
+            <v-radio-group row >
+              <v-row >
+            <v-col sm="4" >
+              <v-row>
+                <v-img
+                  :src="require('../../assets/images/delgado.jpg')"
+                >
+                </v-img>
+              </v-row>
+              <v-row>
+                <v-radio label="Delgado" value="bajo"></v-radio>
+              </v-row>
+            </v-col >
+            <v-col sm="4">
+              <v-row>
+                <v-img
+                  :src="require('../../assets/images/fuerte.jpg')"
+                >
+                </v-img>
+              </v-row>
+              <v-row>
+                <v-radio label="Normal" value="medio"></v-radio>
+              </v-row>
+            </v-col>
+            <v-col sm="4">
+              <v-row>
+                <v-img
+                  :src="require('../../assets/images/tasado.jpg')"
+                >
+                </v-img>
+              </v-row>
+              <v-row>
+                <v-radio label="Fuerte" value="alto"></v-radio>
+              </v-row>
+            </v-col>
+              </v-row>
+            </v-radio-group>
+          </v-row>
+          <span> ¿A que físico te quieres parecer?</span>
+          <v-row  justify="center">
+            <v-radio-group row >
+              <v-row >
+            <v-col sm="4" >
+              <v-row>
+                <v-img
+                  :src="require('../../assets/images/delgado.jpg')"
+                >
+                </v-img>
+              </v-row>
+              <v-row>
+                <v-radio label="Delgado" value="bajo"></v-radio>
+              </v-row>
+            </v-col >
+            <v-col sm="4">
+              <v-row>
+                <v-img
+                  :src="require('../../assets/images/fuerte.jpg')"
+                >
+                </v-img>
+              </v-row>
+              <v-row>
+                <v-radio label="Normal" value="medio"></v-radio>
+              </v-row>
+            </v-col>
+            <v-col sm="4">
+              <v-row>
+                <v-img
+                  :src="require('../../assets/images/tasado.jpg')"
+                >
+                </v-img>
+              </v-row>
+              <v-row>
+                <v-radio label="Fuerte" value="alto"></v-radio>
+              </v-row>
+            </v-col>
+              </v-row>
+            </v-radio-group>
           </v-row>
         </v-card>
       </v-col>
