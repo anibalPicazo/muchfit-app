@@ -70,7 +70,7 @@
           {
             icon: 'mdi-apps',
             title: 'Panel de control',
-            to: '/'
+            to: '/dashboard'
           },
           {
             icon: 'mdi-book-open-page-variant',
@@ -89,12 +89,12 @@
           {
             icon: 'mdi-clipboard-alert-outline',
             title: 'Test Nutricional',
-            to: '/inspire'
+            to: '/test_nutricional'
           },
           {
             icon: 'mdi-clipboard-pulse',
             title: 'Test Rutina',
-            to: '/inspire'
+            to: '/test_entrenamiento'
           }
 
         ],

@@ -64,7 +64,7 @@
 <script>
     export default {
         name: "index.vue",
-        layout: "test"
+        layout: "testNutri"
 
     }
 </script>

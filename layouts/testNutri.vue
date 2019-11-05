@@ -1,5 +1,5 @@
 <template>
-  <v-app id="fondo">
+  <v-app id="fondoNutri">
     <toolbar></toolbar>
     <v-content>
 
@@ -18,7 +18,7 @@
 </script>
 <style>
 
-  #fondo {
+  #fondoNutri {
     font-family: "Roboto", serif;
     background-image: url("../assets/images/nutricion.jpg");
     background-size: cover;
