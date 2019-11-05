@@ -1,6 +1,7 @@
 <template>
   <div>
     <v-navigation-drawer
+      color="grey darken-3"
       v-model="drawer"
       :mini-variant="miniVariant"
       :clipped="clipped"
@@ -14,9 +15,18 @@
               <v-img src="https://randomuser.me/api/portraits/men/85.jpg"></v-img>
             </v-avatar>
           </v-flex>
-          <v-flex>
-            <p class="white--tex mt3 head-line"> Juanito Perez </p>
+          <v-flex class="mt-3">
+            <p style="color: white"> Anibal Picazo </p>
+            <v-spacer></v-spacer>
+            <v-list-item class="ma-1 shadow-1 ml-4">
+              <v-list-item-content>
+                <div class="overline">
+                 <v-btn color="grey darken-3" elevation="0" @click="logout"> <v-icon color="error" class="mr-3">mdi-location-exit</v-icon></v-btn>
+                </div>
+              </v-list-item-content>
+            </v-list-item>
           </v-flex>
+
         </v-layout>
         <v-list-item
           v-for="(item, i) in items"
@@ -24,6 +34,7 @@
           :to="item.to"
           router
           exact
+          dark
         >
           <v-list-item-action>
             <v-icon>{{ item.icon }}</v-icon>
@@ -38,6 +49,7 @@
       :clipped-left="clipped"
       fixed
       app
+      color="primary" dark style="box-shadow: none !important;"
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
 
@@ -57,18 +69,44 @@
         items: [
           {
             icon: 'mdi-apps',
-            title: 'Welcome',
+            title: 'Panel de control',
             to: '/'
           },
           {
-            icon: 'mdi-chart-bubble',
-            title: 'Inspire',
+            icon: 'mdi-book-open-page-variant',
+            title: 'Cuaderno de entrenamiento',
+            to: '/inspire'
+          },
+          {
+            icon: 'mdi-weight-lifter',
+            title: 'Mi Rutina',
+            to: '/inspire'
+          },{
+            icon: 'mdi-food-apple',
+            title: 'Mi dieta',
+            to: '/inspire'
+          },
+          {
+            icon: 'mdi-clipboard-alert-outline',
+            title: 'Test Nutricional',
+            to: '/inspire'
+          },
+          {
+            icon: 'mdi-clipboard-pulse',
+            title: 'Test Rutina',
             to: '/inspire'
           }
+
         ],
         miniVariant: false,
         title: 'Much Fit'
       }
+    },
+    methods:{
+        logout() {
+            this.$auth.logout()
+            this.$router.push("/login")
+        },
     }
   }
 </script>
