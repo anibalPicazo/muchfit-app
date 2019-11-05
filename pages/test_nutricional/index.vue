@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
     <v-row justify="center"  fill >
-      <v-col cols="12"  sm="6" md="4">
+      <v-col cols="12"  sm="7" md="7">
         <v-card class="mt-5" elevation="10" height="650px">
           <v-sheet
             class="v-sheet--offset ml-4"
@@ -9,13 +9,13 @@
             elevation="8"
             height="40px"
           >
-            <v-icon large color="white">mdi-progress-clock </v-icon><span style="color: white"> Test de entranmiento</span>
+            <v-icon large color="white">mdi-progress-clock </v-icon><span style="color: white"> Test de entrenamiento</span>
           </v-sheet>
           <v-row>
             <v-col md="12" sm="12">
               <v-card-text>
                 <span>
-                  Bienvenido al teste de entrenamiento, con estos sencillos pasos calcularemos cual seria la rutina ideal,
+                  Bienvenido al test de entrenamiento, con estos sencillos pasos calcularemos cual seria la rutina ideal,
                   porfavor realice el test con la maxima sinceridad para asi poder recomendarle de maneras mas efectiva
                   una rutina de entrenamiento. Si tiene alguna patlogía porfavor consulterlo con su medico.
                 </span>
