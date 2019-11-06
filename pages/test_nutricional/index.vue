@@ -2,7 +2,7 @@
   <v-container fluid>
     <v-row justify="center"  fill >
       <v-col cols="12"  sm="9" md="9">
-        <v-card class="mt-5" elevation="10" height="1000px">
+        <v-card class="mt-5" elevation="10" >
           <v-sheet
             class="v-sheet--offset ml-4"
             color="blue"
@@ -26,18 +26,18 @@
                 <h2 class="mt-3"> Cuestionario </h2>
                 <v-row>
                 <v-col>
-                  <v-text-field  label="Edad" ></v-text-field>
+                  <v-text-field v-model="item.edad" label="Edad" ></v-text-field>
                 </v-col>
                 <v-col>
-                  <v-text-field  label="Peso" ></v-text-field>
+                  <v-text-field v-model="item.peso" label="Peso" ></v-text-field>
                 </v-col>
                 <v-col>
-                  <v-text-field  label="Altura" ></v-text-field>
+                  <v-text-field v-model="item.altura" label="Altura" ></v-text-field>
                 </v-col>
                 </v-row>
                 <v-row>
                   <v-col>
-                  <v-radio-group  row>
+                  <v-radio-group  row v-model="item.genero">
                     <v-icon large color="blue">mdi-gender-male  </v-icon>
                     <v-radio label="Hombre" value="hombre"> </v-radio>
                     <v-icon large color="pink">mdi-gender-female </v-icon>
@@ -56,8 +56,10 @@
 
           </v-row>
           <span> ¿Con que físico te ves identificado?</span>
+
+
           <v-row justify="center" >
-            <v-radio-group row >
+            <v-radio-group row v-model="item.fisico_actual" >
               <v-row >
             <v-col sm="4" >
               <v-row>
@@ -97,7 +99,7 @@
           </v-row>
           <span> ¿A que físico te quieres parecer?</span>
           <v-row  justify="center">
-            <v-radio-group row >
+            <v-radio-group row v-model="item.fisico_deseado" >
               <v-row >
             <v-col sm="4" >
               <v-row>
@@ -135,6 +137,13 @@
               </v-row>
             </v-radio-group>
           </v-row>
+          <v-row class="mx-auto" >
+           <v-col md="12">
+             <v-btn class="primary" block>
+               Enviar
+             </v-btn>
+           </v-col>
+          </v-row>
         </v-card>
       </v-col>
     </v-row>
@@ -144,8 +153,12 @@
 <script>
     export default {
         name: "index.vue",
-        layout: "testNutri"
-
+        layout: "testNutri",
+        data() {
+            return {
+                item: {},
+            }
+        }
     }
 </script>
 
@@ -153,5 +166,8 @@
   .v-sheet--offset {
     top: -24px;
     position: relative;
+  }
+  .radio-group-full-width >>>.v-input__control {
+    width: 100%
   }
 </style>
