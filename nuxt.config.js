@@ -36,6 +36,9 @@ export default {
   */
   plugins: [
     {src: '~/plugins/vuelidate', ssr: true},
+    {src: '~/plugins/vue-uuid', ssr: false},
+
+
   ],
   /*
   ** Nuxt.js dev-modules
@@ -50,7 +53,8 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/vuetify',
-    '@nuxtjs/auth'
+    '@nuxtjs/auth',
+
   ],
   router: {
     middleware: ['auth']

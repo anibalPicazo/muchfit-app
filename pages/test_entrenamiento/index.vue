@@ -2,7 +2,7 @@
   <v-container fluid>
     <v-row justify="center"  fill >
       <v-col cols="12"  sm="7" md="7">
-        <v-card class="mt-5" elevation="10" height="650px">
+        <v-card class="mt-5" elevation="10" >
           <v-sheet
             class="v-sheet--offset ml-4"
             color="blue"
@@ -23,13 +23,22 @@
                 <v-col class="mt-3">
 
                   <v-autocomplete
-                    :items="['De 0 a 2 meses', 'De 2 a 8 meses', '8 meses - 1 año y medio', 'Más de un año']"
+                    v-model="item.experiencia_deporte"
+                    :items="['De cero a dos meses', 'De dos a ocho meses', 'De ocho meses a un año', 'Más de un año']"
                     label="Experiencia en el gimasio"
                   ></v-autocomplete>
                 </v-col>
                 <v-col>
                   <v-autocomplete
-                    :items="['1-2 días', '2-3 días', 'más 3 dóas']"
+                    v-model="item.frecuencia_entrenamiento"
+                    :items="['Menos de 2 días', 'Entre 2 y 3 días', 'Más de 3 días']"
+                    label="Frecuencia de entrenamiento"
+                  ></v-autocomplete>
+                </v-col>
+                <v-col>
+                  <v-autocomplete
+                    v-model="item.objetivo"
+                    :items="['Hipertrofia', 'Ganancia de fuerza']"
                     label="Frecuencia de entrenamiento"
                   ></v-autocomplete>
                 </v-col>
@@ -37,13 +46,20 @@
                 </v-col>
                 <v-col>
                   <v-autocomplete
-                    :items="['Muy Bajo', 'Bajo', 'Medio','Alto']"
+                    v-model="item.forma_fisica"
+                    :items="['Malo', 'Normal', 'Bueno']"
                     label="Estado físico percibido"
                   ></v-autocomplete>
                 </v-col>
               </v-card-text>
             </v-col>
-
+          </v-row>
+          <v-row class="mx-auto" >
+            <v-col md="12">
+              <v-btn class="primary" block @click="submmit">
+                Enviar
+              </v-btn>
+            </v-col>
           </v-row>
         </v-card>
       </v-col>
@@ -52,11 +68,27 @@
 </template>
 
 <script>
+
     export default {
-        name: "index.vue",
-        layout: "test"
+        layout: "test",
+        data() {
+            return {
+                item: {},
+            }
+        },
+        methods:{
+            async submmit()  {
+                this.item.uuid = this.$uuid.v4();
+                this.$store.commit("notification/show", {color:"success", text: 'Delegación guardada correctamente'})
+
+                // let response = await this.$axios.post(`/test_entrenamientos`,this.item)
+                // console.log('item sended', response.data);
+
+            }
+        }
 
     }
+
 </script>
 
 <style scoped>

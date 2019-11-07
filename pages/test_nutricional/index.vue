@@ -139,7 +139,7 @@
           </v-row>
           <v-row class="mx-auto" >
            <v-col md="12">
-             <v-btn class="primary" block>
+             <v-btn class="primary" block @click="submmit">
                Enviar
              </v-btn>
            </v-col>
@@ -151,12 +151,21 @@
 </template>
 
 <script>
+    import Notification from "../../components/Notification";
     export default {
         name: "index.vue",
         layout: "testNutri",
+        components: {Notification},
         data() {
             return {
                 item: {},
+            }
+        },
+        methods:{
+            async submmit()  {
+                this.item.uuid = this.$uuid.v4()
+                response = await this.$axios.post(`/test_nutricional`,this.item)
+                console.log('response', response);
             }
         }
     }
