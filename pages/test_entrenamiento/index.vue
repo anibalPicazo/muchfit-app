@@ -79,7 +79,7 @@
         methods:{
             async submmit()  {
                 this.item.uuid = this.$uuid.v4();
-                this.$store.commit("notification/show", {color:"success", text: 'Delegación guardada correctamente'})
+                this.$store.commit("notification/show", {color:"success", text: 'Test de entrenamiento creado.'})
 
                 // let response = await this.$axios.post(`/test_entrenamientos`,this.item)
                 // console.log('item sended', response.data);

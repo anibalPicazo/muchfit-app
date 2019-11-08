@@ -25,6 +25,6 @@ export const modules = {
         state.display = false
       }
     }
-  },
-
+  }
 };
+

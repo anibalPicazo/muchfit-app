@@ -1,5 +1,6 @@
 <template>
   <v-app id="fondo">
+    <Notification></Notification>
     <toolbar></toolbar>
     <v-content>
 
@@ -11,8 +12,9 @@
 
 <script>
     import toolbar from '../components/toolbar'
+    import Notification from "../components/Notification";
     export default {
-        components: { toolbar },
+        components: { toolbar, Notification },
 
     }
 </script>

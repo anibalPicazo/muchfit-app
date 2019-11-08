@@ -1,8 +1,8 @@
 <template>
   <v-app id="fondoNutri">
     <toolbar></toolbar>
+    <notification/>
     <v-content>
-
       <nuxt />
 
     </v-content>
@@ -11,8 +11,10 @@
 
 <script>
     import toolbar from '../components/toolbar'
+    import Notification from "../components/Notification";
+
     export default {
-        components: { toolbar },
+        components: { toolbar,Notification },
 
     }
 </script>

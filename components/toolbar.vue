@@ -51,18 +51,6 @@
       app
       color="primary" dark style="box-shadow: none !important;"
     >
-      <v-snackbar
-        v-model="snackbar"
-        :timeout="timeout"
-      >
-        <v-btn
-          color="blue"
-          text
-          @click="snackbar = false"
-        >
-          Close
-        </v-btn>
-      </v-snackbar>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
 
       <v-avatar><img src="../assets/images/logov1peq.png" alt="avatar"></v-avatar>
