@@ -56,8 +56,7 @@
           </v-row>
           <v-row class="mx-auto" >
             <v-col md="12">
-              <v-btn class="primary" block @click="submmit">
-                Enviar
+              <v-btn class="primary" block @click="submmit"  :tile="getTitle">
               </v-btn>
             </v-col>
           </v-row>
@@ -73,7 +72,21 @@
         layout: "test",
         data() {
             return {
-                item: {},
+                item: {uuid:''},
+                isNew: false
+
+            }
+        },
+        watch: {
+            item: function (item) {
+                if ( item.uuid !== ''){
+                  this.isNew = true
+                }
+            }
+        },
+        mounted(){
+            if (this.item.uuid !== ''){
+                this.isNew =
             }
         },
         methods:{
@@ -81,8 +94,18 @@
                 this.item.uuid = this.$uuid.v4();
                 let response = await this.$axios.post(`/test_entrenamientos`,this.item)
                 console.log('item sended', response.data);
-                this.$store.commit("notification/show", {color:"success", text: 'Test de entrenamiento creado.'})
+                this.$store.commit("notification/show", {color:"success", text: 'Test de entrenamiento creado.'});
+                this.getTest();
 
+            },
+            async getTest() {
+                let response = await  this.$axios.get(`/test_entrenamientos`)
+                if(response.data.len> 0){
+                    this.item = response.data
+                }
+            },
+            getTitle() {
+                return this.isNew ? "Enviar" : "Ver test";
             }
         }
 
