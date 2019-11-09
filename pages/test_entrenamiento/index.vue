@@ -84,11 +84,6 @@
                 }
             }
         },
-        mounted(){
-            if (this.item.uuid !== ''){
-                this.isNew =
-            }
-        },
         methods:{
             async submmit()  {
                 this.item.uuid = this.$uuid.v4();
