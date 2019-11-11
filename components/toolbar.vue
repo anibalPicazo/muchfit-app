@@ -35,6 +35,7 @@
           router
           exact
           dark
+          v-show="manageView(item)"
         >
           <v-list-item-action>
             <v-icon>{{ item.icon }}</v-icon>
@@ -83,7 +84,7 @@
             to: '/inspire'
           },{
             icon: 'mdi-food-apple',
-            title: 'Mi dieta',
+            title: 'Mi Dieta',
             to: '/inspire'
           },
           {
@@ -107,6 +108,17 @@
             this.$auth.logout()
             this.$router.push("/login")
         },
+        manageView(item){
+         if(item.title === 'Mi Rutina'){
+             return !! this.$auth.user.rutina;
+         }
+         if(item.title === 'Mi Dieta'){
+             return !! this.$auth.user.dieta;
+
+         }
+         return true;
+
+        }
     }
   }
 </script>
