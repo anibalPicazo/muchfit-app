@@ -94,6 +94,7 @@
         data() {
             return {
                 item: {nombre:'Rutina de Aclimatacion',desgaste_calorico:'800',dificultad_usuario:'Facil',frecuencia: '3',volumen:'2',duracion:'121'},
+                user : {},
                 headers: [
                     {
                         text: 'Dessert (100g serving)',
@@ -191,10 +192,18 @@
                 ],
             }
         },
+        mounted(){
+            this.user = this.$auth.user;
+            console.log('user',this.user);
+            this.getRutina()
+        },
         watch: {
 
         },
         methods:{
+            async getRutina(){
+                
+            }
 
         }
 
