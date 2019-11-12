@@ -55,32 +55,50 @@
               </v-row>
             </v-container>
           </v-card-text>
-          <v-container>
-            <v-card-title>Dia A</v-card-title>
-            <v-row>
-            <v-col cols="12">
-            <v-data-table
-              :headers="headers"
-              :items="desserts"
-              :items-per-page="5"
-              class="elevation-1"
-            ></v-data-table>
-            </v-col>
-          </v-row>
-          </v-container>
-          <v-container>
-            <v-card-title>Dia B</v-card-title>
-          <v-row>
-            <v-col cols="12">
-            <v-data-table
-              :headers="headers"
-              :items="desserts"
-              :items-per-page="5"
-              class="elevation-1"
-            ></v-data-table>
-            </v-col>
-          </v-row>
-          </v-container>
+<!--          <v-container>-->
+<!--            <v-card-title>Dia A</v-card-title>-->
+<!--            <v-row>-->
+<!--            <v-col cols="12">-->
+<!--            <v-data-table-->
+<!--              :headers="headers"-->
+<!--              :items="desserts"-->
+<!--              :items-per-page="5"-->
+<!--              class="elevation-1"-->
+<!--            ></v-data-table>-->
+<!--            </v-col>-->
+<!--          </v-row>-->
+<!--          </v-container>-->
+<!--          <v-container>-->
+<!--            <v-card-title>Dia B</v-card-title>-->
+<!--          <v-row>-->
+<!--            <v-col cols="12">-->
+<!--            <v-data-table-->
+<!--              :headers="headers"-->
+<!--              :items="desserts"-->
+<!--              :items-per-page="5"-->
+<!--              class="elevation-1"-->
+<!--            ></v-data-table>-->
+<!--            </v-col>-->
+<!--          </v-row>-->
+<!--          </v-container>-->
+          <template v-for="list in this.dias">
+            <v-container>
+              <v-card-title>{{list.nombre}}</v-card-title>
+              <v-row>
+                <v-col cols="12">
+                  <v-data-table
+                    :headers="headers"
+                    :items="list.dia_ejercicios"
+                    :items-per-page="5"
+                    class="elevation-1"
+                  ></v-data-table>
+                </v-col>
+              </v-row>
+            </v-container>
+
+
+
+          </template>
         </v-card>
       </v-col>
     </v-row>
@@ -95,18 +113,18 @@
             return {
                 item: {nombre:'Rutina de Aclimatacion',desgaste_calorico:'800',dificultad_usuario:'Facil',frecuencia: '3',volumen:'2',duracion:'121'},
                 user : {},
+                dias: [],
                 headers: [
                     {
-                        text: 'Dessert (100g serving)',
+                        text: 'Nombre Ejercicio',
                         align: 'left',
                         sortable: false,
-                        value: 'name',
+                        value: 'ejercicio.descripcion',
                     },
-                    { text: 'Calories', value: 'calories' },
-                    { text: 'Fat (g)', value: 'fat' },
-                    { text: 'Carbs (g)', value: 'carbs' },
-                    { text: 'Protein (g)', value: 'protein' },
-                    { text: 'Iron (%)', value: 'iron' },
+                    { text: 'Series', value: 'serie' },
+                    { text: 'Repeticiones', value: 'repeticiones' },
+                    { text: 'Descanso', value: 'descanso' },
+                    { text: 'Intensidad', value: 'intensidad' },
                 ],
                 desserts: [
                     {
@@ -202,7 +220,11 @@
         },
         methods:{
             async getRutina(){
-                
+                let response = await this.$axios.get(`/users/${this.user.uuid}/rutina`)
+                this.item = response.data
+                this.dias = response.data.dia
+                console.log('dia',this.dias);
+                console.log(this.item);
             }
 
         }
