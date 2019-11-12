@@ -109,10 +109,10 @@
             this.$router.push("/login")
         },
         manageView(item){
-         if(item.title === 'Mi Rutina'){
+         if(item.title === 'Mi Rutinar'){
              return !! this.$auth.user.rutina;
          }
-         if(item.title === 'Mi Dieta'){
+         if(item.title === 'Mi Dietar'){
              return !! this.$auth.user.dieta;
 
          }
