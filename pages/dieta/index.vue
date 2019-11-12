@@ -57,7 +57,9 @@
                     :headers="headers"
                     :items="list.meals"
                     :items-per-page="5"
+                    :group-by = "list.meals.tipo"
                     class="elevation-1"
+                    show-group-by
                   ></v-data-table>
                 </v-col>
               </v-row>
@@ -88,6 +90,7 @@
                         sortable: false,
                         value: 'alimento.descripcion',
                     },
+                    { text: 'Tipo', value: 'tipo' },
                     { text: 'Kcal', value: 'alimento.energia_kcal' },
                     { text: 'kJul', value: 'alimento.energia_kj' },
                     { text: 'Grasas', value: 'alimento.grasas' },
@@ -129,4 +132,5 @@
     top: -24px;
     position: relative;
   }
+  
 </style>
