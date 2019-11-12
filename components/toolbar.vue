@@ -52,7 +52,7 @@
       app
       color="primary" dark style="box-shadow: none !important;"
     >
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer"  />
 
       <v-avatar><img src="../assets/images/logov1peq.png" alt="avatar"></v-avatar>
     </v-app-bar>
@@ -81,11 +81,11 @@
           {
             icon: 'mdi-weight-lifter',
             title: 'Mi Rutina',
-            to: '/inspire'
+            to: '/rutina'
           },{
             icon: 'mdi-food-apple',
             title: 'Mi Dieta',
-            to: '/inspire'
+            to: '/dieta'
           },
           {
             icon: 'mdi-clipboard-alert-outline',
