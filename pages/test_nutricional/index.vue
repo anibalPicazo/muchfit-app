@@ -161,11 +161,18 @@
                 item: {},
             }
         },
+        mounted(){
+          this.getTest()
+        },
         methods:{
             async submmit()  {
                 this.item.uuid = this.$uuid.v4()
                 response = await this.$axios.post(`/test_nutricional`,this.item)
                 console.log('response', response);
+            },
+            async getTest() {
+                let response = await this.$axios.get('/test_nutricional');
+                response ? this.item = response.data : this.item= {}
             }
         }
     }

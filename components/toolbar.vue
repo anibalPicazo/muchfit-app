@@ -7,7 +7,8 @@
       :clipped="clipped"
       fixed
       app
-      temporary>
+      temporary
+      class="toolbar-fit">
       <v-list>
         <v-layout mt-4 column align-center>
           <v-flex>
@@ -122,3 +123,8 @@
     }
   }
 </script>
+<style>
+  .toolbar-fit{
+    background-image: url("../assets/images/leftbar.jpg");
+  }
+</style>
