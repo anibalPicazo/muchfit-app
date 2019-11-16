@@ -30,6 +30,30 @@
                  </v-card-actions>
                </v-card>
              </v-col>
+                <v-col md="3"  sm="12">
+                  <v-card
+                    max-height="200"
+                  >
+                    <v-img
+                      class="white--text align-end"
+                      height="150px"
+                      :src="require('../../assets/images/chicken.jpg')"
+                    >
+                      <v-card-title>Pollo</v-card-title>
+                    </v-img>
+                    <v-card-actions>
+                      <v-col>
+                        <v-icon>mdi-cards-heart</v-icon>
+                      </v-col>
+                      <v-col>
+                        <v-icon>mdi-tag-plus </v-icon>
+                      </v-col>
+                      <v-col>
+                        <v-icon>mdi-share-variant</v-icon>
+                      </v-col>
+                    </v-card-actions>
+                  </v-card>
+                </v-col>
              <v-col md="3"  sm="12">
                <v-card
                  max-height="200"

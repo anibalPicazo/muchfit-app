@@ -7,7 +7,8 @@
       :clipped="clipped"
       fixed
       app
-      temporary>
+      temporary
+      class="toolbar-fit">
       <v-list>
         <v-layout mt-4 column align-center>
           <v-flex>
@@ -35,6 +36,7 @@
           router
           exact
           dark
+          v-show="manageView(item)"
         >
           <v-list-item-action>
             <v-icon>{{ item.icon }}</v-icon>
@@ -51,7 +53,7 @@
       app
       color="primary" dark style="box-shadow: none !important;"
     >
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer"  />
 
       <v-avatar><img src="../assets/images/logov1peq.png" alt="avatar"></v-avatar>
     </v-app-bar>
@@ -70,7 +72,7 @@
           {
             icon: 'mdi-apps',
             title: 'Panel de control',
-            to: '/'
+            to: '/dashboard'
           },
           {
             icon: 'mdi-book-open-page-variant',
@@ -80,21 +82,21 @@
           {
             icon: 'mdi-weight-lifter',
             title: 'Mi Rutina',
-            to: '/inspire'
+            to: '/rutina'
           },{
             icon: 'mdi-food-apple',
-            title: 'Mi dieta',
-            to: '/inspire'
+            title: 'Mi Dieta',
+            to: '/dieta'
           },
           {
             icon: 'mdi-clipboard-alert-outline',
             title: 'Test Nutricional',
-            to: '/inspire'
+            to: '/test_nutricional'
           },
           {
             icon: 'mdi-clipboard-pulse',
             title: 'Test Rutina',
-            to: '/inspire'
+            to: '/test_entrenamiento'
           }
 
         ],
@@ -107,6 +109,22 @@
             this.$auth.logout()
             this.$router.push("/login")
         },
+        manageView(item){
+         if(item.title === 'Mi Rutinar'){
+             return !! this.$auth.user.rutina;
+         }
+         if(item.title === 'Mi Dietar'){
+             return !! this.$auth.user.dieta;
+
+         }
+         return true;
+
+        }
     }
   }
 </script>
+<style>
+  .toolbar-fit{
+    background-image: url("../assets/images/leftbar.jpg");
+  }
+</style>

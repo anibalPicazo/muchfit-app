@@ -43,6 +43,7 @@
   export default {
     components: { registerComponent,carouselComponent },
     name: "login",
+    layout: "login",
     data() {
       return {
         username: '',

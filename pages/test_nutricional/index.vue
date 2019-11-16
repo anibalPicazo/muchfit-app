@@ -1,0 +1,189 @@
+<template>
+  <v-container fluid>
+    <v-row justify="center"  fill >
+      <v-col cols="12"  sm="9" md="9">
+        <v-card class="mt-5" elevation="10" >
+          <v-sheet
+            class="v-sheet--offset ml-4"
+            color="blue"
+            elevation="8"
+            height="50px"
+          >
+            <v-row justify="center">
+              <v-col cols="3">
+                <v-icon large color="white">mdi-food-apple  </v-icon><span style="color: white"> Test  Nutricional</span>
+              </v-col>
+            </v-row>
+          </v-sheet>
+          <v-row>
+            <v-col md="12" sm="12">
+              <v-card-text>
+                <span>
+                  Bienvenido al test de nutricional, con estos sencillos pasos calcularemos cual seria su dieta ideal,
+                  porfavor realice el test con la maxima sinceridad para asi poder recomendarle de maneras mas efectiva
+                  su rutina ideal. Si tiene alguna patlogía porfavor consulterlo con su medico.
+                </span>
+                <h2 class="mt-3"> Cuestionario </h2>
+                <v-row>
+                <v-col>
+                  <v-text-field v-model="item.edad" label="Edad" ></v-text-field>
+                </v-col>
+                <v-col>
+                  <v-text-field v-model="item.peso" label="Peso" ></v-text-field>
+                </v-col>
+                <v-col>
+                  <v-text-field v-model="item.altura" label="Altura" ></v-text-field>
+                </v-col>
+                </v-row>
+                <v-row>
+                  <v-col>
+                  <v-radio-group  row v-model="item.genero">
+                    <v-icon large color="blue">mdi-gender-male  </v-icon>
+                    <v-radio label="Hombre" value="hombre"> </v-radio>
+                    <v-icon large color="pink">mdi-gender-female </v-icon>
+                    <v-radio label="Mujer" value="mujer"></v-radio>
+                  </v-radio-group>
+                  </v-col>
+                  <v-col>
+                    <v-text-field  label="IMC" ></v-text-field>
+                  </v-col>
+                  <v-col>
+                    <v-text-field  label="% Grasa" ></v-text-field>
+                  </v-col>
+                </v-row>
+              </v-card-text>
+            </v-col>
+
+          </v-row>
+          <span> ¿Con que físico te ves identificado?</span>
+
+
+          <v-row justify="center" >
+            <v-radio-group row v-model="item.fisico_actual" >
+              <v-row >
+            <v-col sm="4" >
+              <v-row>
+                <v-img
+                  :src="require('../../assets/images/delgado.jpg')"
+                >
+                </v-img>
+              </v-row>
+              <v-row>
+                <v-radio label="Delgado" value="bajo"></v-radio>
+              </v-row>
+            </v-col >
+            <v-col sm="4">
+              <v-row>
+                <v-img
+                  :src="require('../../assets/images/fuerte.jpg')"
+                >
+                </v-img>
+              </v-row>
+              <v-row>
+                <v-radio label="Normal" value="medio"></v-radio>
+              </v-row>
+            </v-col>
+            <v-col sm="4">
+              <v-row>
+                <v-img
+                  :src="require('../../assets/images/tasado.jpg')"
+                >
+                </v-img>
+              </v-row>
+              <v-row>
+                <v-radio label="Fuerte" value="alto"></v-radio>
+              </v-row>
+            </v-col>
+              </v-row>
+            </v-radio-group>
+          </v-row>
+          <span> ¿A que físico te quieres parecer?</span>
+          <v-row  justify="center">
+            <v-radio-group row v-model="item.fisico_deseado" >
+              <v-row >
+            <v-col sm="4" >
+              <v-row>
+                <v-img
+                  :src="require('../../assets/images/delgado.jpg')"
+                >
+                </v-img>
+              </v-row>
+              <v-row>
+                <v-radio label="Delgado" value="bajo"></v-radio>
+              </v-row>
+            </v-col >
+            <v-col sm="4">
+              <v-row>
+                <v-img
+                  :src="require('../../assets/images/fuerte.jpg')"
+                >
+                </v-img>
+              </v-row>
+              <v-row>
+                <v-radio label="Normal" value="medio"></v-radio>
+              </v-row>
+            </v-col>
+            <v-col sm="4">
+              <v-row>
+                <v-img
+                  :src="require('../../assets/images/tasado.jpg')"
+                >
+                </v-img>
+              </v-row>
+              <v-row>
+                <v-radio label="Fuerte" value="alto"></v-radio>
+              </v-row>
+            </v-col>
+              </v-row>
+            </v-radio-group>
+          </v-row>
+          <v-row class="mx-auto" >
+           <v-col md="12">
+             <v-btn class="primary" block @click="submmit">
+               Enviar
+             </v-btn>
+           </v-col>
+          </v-row>
+        </v-card>
+      </v-col>
+    </v-row>
+  </v-container>
+</template>
+
+<script>
+    import Notification from "../../components/Notification";
+    export default {
+        name: "index.vue",
+        layout: "testNutri",
+        components: {Notification},
+        data() {
+            return {
+                item: {},
+            }
+        },
+        mounted(){
+          this.getTest()
+        },
+        methods:{
+            async submmit()  {
+                this.item.uuid = this.$uuid.v4()
+                response = await this.$axios.post(`/test_nutricional`,this.item)
+                console.log('response', response);
+            },
+            async getTest() {
+                let response = await this.$axios.get('/test_nutricional');
+                response ? this.item = response.data : this.item= {}
+            }
+        }
+    }
+</script>
+
+<style scoped>
+  .v-sheet--offset {
+    top: -24px;
+    position: relative;
+  }
+  .radio-group-full-width >>>.v-input__control {
+    width: 100%
+  }
+</style>
