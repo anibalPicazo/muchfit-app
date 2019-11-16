@@ -30,7 +30,7 @@
                 </v-col>
                 <v-col>
                   <v-autocomplete
-                    v-model="item.frecuencia_entrenamiento"
+                    v-model="item.frecuencia"
                     :items="['Menos de 2 días', 'Entre 2 y 3 días', 'Más de 3 días']"
                     label="Frecuencia de entrenamiento"
                   ></v-autocomplete>
@@ -56,7 +56,7 @@
           </v-row>
           <v-row class="mx-auto" >
             <v-col md="12">
-              <v-btn class="primary" block @click="submmit"  :tile="getTitle">
+              <v-btn class="primary" block @click="submmit"> Enviar
               </v-btn>
             </v-col>
           </v-row>
@@ -90,7 +90,7 @@
                 let response = await this.$axios.post(`/test_entrenamientos`,this.item)
                 console.log('item sended', response.data);
                 this.$store.commit("notification/show", {color:"success", text: 'Test de entrenamiento creado.'});
-                this.getTest();
+                this.$router.push('/rutina')
 
             },
             async getTest() {
@@ -98,9 +98,6 @@
                 if(response.data.len> 0){
                     this.item = response.data
                 }
-            },
-            getTitle() {
-                return this.isNew ? "Enviar" : "Ver test";
             }
         }
 

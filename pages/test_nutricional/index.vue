@@ -26,13 +26,16 @@
                 <h2 class="mt-3"> Cuestionario </h2>
                 <v-row>
                 <v-col>
-                  <v-text-field v-model="item.edad" label="Edad" ></v-text-field>
+                  <v-text-field type="number" v-model="item.edad" label="Edad" ></v-text-field>
                 </v-col>
                 <v-col>
-                  <v-text-field v-model="item.peso" label="Peso" ></v-text-field>
+                  <v-text-field  suffix="Kg" type="number" v-model="item.peso" label="Peso" ></v-text-field>
                 </v-col>
                 <v-col>
-                  <v-text-field v-model="item.altura" label="Altura" ></v-text-field>
+                  <v-text-field  suffix="cm" type="number" v-model="item.altura" label="Altura" ></v-text-field>
+                </v-col>
+                  <v-col>
+                    <v-select v-model="item.actividad_fisica" :items="['Hiperactivo','Muy activo','Moderadamente activo','Levemente activo','Sedentario']"  label="Actividad" ></v-select>
                 </v-col>
                 </v-row>
                 <v-row>
@@ -45,10 +48,13 @@
                   </v-radio-group>
                   </v-col>
                   <v-col>
-                    <v-text-field  label="IMC" ></v-text-field>
+                    <v-text-field type="number" v-model="item.imc"  label="IMC" ></v-text-field>
                   </v-col>
                   <v-col>
-                    <v-text-field  label="% Grasa" ></v-text-field>
+                    <v-text-field  type="number" suffix="%" v-model="item.grasa"  label="% Grasa" ></v-text-field>
+                  </v-col>
+                  <v-col>
+                    <v-select v-model="item.experiencia" :items="['Más de un año','Menos de dos años','De dos a cuatro años']"  label="Experiencia" ></v-select>
                   </v-col>
                 </v-row>
               </v-card-text>
@@ -59,7 +65,7 @@
 
 
           <v-row justify="center" >
-            <v-radio-group row v-model="item.fisico_actual" >
+            <v-radio-group row v-model="item.estado_fisico" >
               <v-row >
             <v-col sm="4" >
               <v-row>
@@ -69,7 +75,7 @@
                 </v-img>
               </v-row>
               <v-row>
-                <v-radio label="Delgado" value="bajo"></v-radio>
+                <v-radio label="Delgado" value="Delgado"></v-radio>
               </v-row>
             </v-col >
             <v-col sm="4">
@@ -80,7 +86,7 @@
                 </v-img>
               </v-row>
               <v-row>
-                <v-radio label="Normal" value="medio"></v-radio>
+                <v-radio label="Normal" value="Definido"></v-radio>
               </v-row>
             </v-col>
             <v-col sm="4">
@@ -91,7 +97,7 @@
                 </v-img>
               </v-row>
               <v-row>
-                <v-radio label="Fuerte" value="alto"></v-radio>
+                <v-radio label="Fuerte" value="Tasado"></v-radio>
               </v-row>
             </v-col>
               </v-row>
@@ -99,7 +105,7 @@
           </v-row>
           <span> ¿A que físico te quieres parecer?</span>
           <v-row  justify="center">
-            <v-radio-group row v-model="item.fisico_deseado" >
+            <v-radio-group row v-model="item.estado_fisico_objetivo" >
               <v-row >
             <v-col sm="4" >
               <v-row>
@@ -109,7 +115,7 @@
                 </v-img>
               </v-row>
               <v-row>
-                <v-radio label="Delgado" value="bajo"></v-radio>
+                <v-radio label="Delgado" value="Delgado"></v-radio>
               </v-row>
             </v-col >
             <v-col sm="4">
@@ -120,7 +126,7 @@
                 </v-img>
               </v-row>
               <v-row>
-                <v-radio label="Normal" value="medio"></v-radio>
+                <v-radio label="Normal" value="Definido"></v-radio>
               </v-row>
             </v-col>
             <v-col sm="4">
@@ -131,7 +137,7 @@
                 </v-img>
               </v-row>
               <v-row>
-                <v-radio label="Fuerte" value="alto"></v-radio>
+                <v-radio label="Fuerte" value="Tasado"></v-radio>
               </v-row>
             </v-col>
               </v-row>
@@ -159,21 +165,30 @@
         data() {
             return {
                 item: {},
+                isNew:false,
             }
         },
-        mounted(){
-          this.getTest()
-        },
+      watch: {
+        item: function (item) {
+          if ( item.uuid !== ''){
+            this.isNew = true
+          }
+        }
+      },
         methods:{
             async submmit()  {
                 this.item.uuid = this.$uuid.v4()
-                response = await this.$axios.post(`/test_nutricional`,this.item)
+                let response = await this.$axios.post(`/test_nutricion`,this.item)
                 console.log('response', response);
+                this.$store.commit("notification/show", {color:"success", text: 'Test de nutricion creado.'});
+                this.$router.push('/dieta')
             },
-            async getTest() {
-                let response = await this.$axios.get('/test_nutricional');
-                response ? this.item = response.data : this.item= {}
+          async getTest() {
+            let response = await  this.$axios.get(`/test_rutina`)
+            if(response.data.len> 0){
+              this.item = response.data
             }
+          }
         }
     }
 </script>
