@@ -1,6 +1,5 @@
 <template>
   <div id="body">
-    <p>test</p>
       <v-container fluid >
         <v-row >
          <v-col md="7" sm="12" >

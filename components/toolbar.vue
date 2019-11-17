@@ -22,7 +22,7 @@
             <v-list-item class="ma-1 shadow-1 ml-4">
               <v-list-item-content>
                 <div class="overline">
-                 <v-btn color="grey darken-3" elevation="0" @click="logout"> <v-icon color="error" class="mr-3">mdi-location-exit</v-icon></v-btn>
+                 <v-btn id="logout" color="grey darken-3" elevation="0" @click="logout"> <v-icon color="error" class="mr-3">mdi-location-exit</v-icon></v-btn>
                 </div>
               </v-list-item-content>
             </v-list-item>
@@ -53,9 +53,10 @@
       app
       color="primary" dark style="box-shadow: none !important;"
     >
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer"  />
+      <v-btn id="btnmenu"  @click.stop="drawer = !drawer" icon> <v-icon> mdi-menu</v-icon>  </v-btn>
 
-      <v-avatar><img src="../assets/images/logov1peq.png" alt="avatar"></v-avatar>
+
+      <v-avatar><img src="../assets/images/logov1peq.png" alt="avatar"> </v-avatar>
     </v-app-bar>
 
   </div>
