@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="1"
+            tests="1">
+
+  <testsuite name="login"
+    errors="0" failures="1" hostname="" id="" package="login" skipped="0"
+    tests="1" time="2.218" timestamp="">
+  
+    <testcase name="Test Login" classname="login" time="2.218" assertions="2">
+
+      <failure message="Testing if element &lt;#__nuxt&gt; contains text: &#34;Comippdas recomendadas&#34; in 1000 ms. - expected [0;32m&#34;Comippdas recomendadas&#34;[0m but got: [0;31m&#34;test
+Comidas recomendadas
+Ensalada
+Pollo
+Frutos Rojos
+Lentejas
+Entrenamientos realizados
+82
+Entenamientos saltados
+12
+56 Kg
+61 Kg
+62 Kg
+57 Kg
+55 Kg
+66 Kg
+71 Kg
+Indice de mejora
+GO TO REPORT
+Planificador entrenamiento
+DOM.
+LUN.
+MAR.
+MIÉ.
+JUE.
+VIE.
+SÁB.
+30
+Descanso
+31
+ene. 1
+2
+3
+Full body dia A
+4
+5
+6
+7
+Full body dia A
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+Full body dia B
+18
+19
+20
+21
+Full body dia A
+22
+23
+24
+25
+26
+27
+28
+29
+30
+Vacaiones
+31
+feb. 1
+2
+Enrenamiento de hoy
+Pecho
+3 series x 12 reps — Press Banca, Fondos en paralelas lastrados, flexiones explosivas
+Espalda
+4 series en 12-10-8-6 reps — Dominadas lastradas, Peso muerto y Remo con mancuerna
+Triceps
+4 series en 12-10-8-6 reps —Extensión de codos sentado, Extensión a una mano con mancuerna
+Biceps
+3 series x 12 reps — Curl de biceps, Misionero, Dominadas con agarre supino lastradas
+Cardio
+15 minutos — Eliptica, Cinta de correr y escalada
+Abdominales
+3 series x 12 reps — Crunch abdominal, Plancha 40 segundos, Rueda
+Menú rapido
+Contacto
+ONLINE
+Mateo Sánchez
+Entrenador personal y nutricionista
+LLAMAR
+CORREO&#34;[0m">    at Object.Test Login (/var/www/html/muchfit-app/tests/login.js:9:21)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)</failure>
+
+    <failure message="    at Object.Test Login (/var/www/html/muchfit-app/tests/login.js:9:21)">    at processTicksAndRejections (internal/process/task_queues.js:93:5)</failure>
+    </testcase>
+  
+
+  
+
+  
+  </testsuite>
+</testsuites>

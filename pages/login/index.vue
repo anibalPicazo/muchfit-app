@@ -19,16 +19,18 @@
                             outlined
                             label="Usuario"
                             required
+                            id="username"
                           ></v-text-field>
                           <v-text-field
                             v-model="password"
                             type="password"
                             label="Contraseña"
                             outlined
+                            id="password"
                             required
                           ></v-text-field>
                           <register-component></register-component>
-                          <v-btn class="mt-3" rounded block large color="primary" @click="submit">Acceder</v-btn>
+                          <v-btn id="btn" class="mt-3" rounded block large color="primary" @click="submit">Acceder</v-btn>
                         </form>
                       </v-flex>
                   </div>
