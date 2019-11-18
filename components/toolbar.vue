@@ -32,6 +32,7 @@
         <v-list-item
           v-for="(item, i) in items"
           :key="i"
+          :id="item.id"
           :to="item.to"
           router
           exact
@@ -73,7 +74,8 @@
           {
             icon: 'mdi-apps',
             title: 'Panel de control',
-            to: '/dashboard'
+            to: '/dashboard',
+            id:'dasboard'
           },
           {
             icon: 'mdi-book-open-page-variant',
@@ -97,7 +99,9 @@
           {
             icon: 'mdi-clipboard-pulse',
             title: 'Test Rutina',
-            to: '/test_entrenamiento'
+            to: '/test_entrenamiento',
+            id:'testEntrenamiento'
+
           }
 
         ],

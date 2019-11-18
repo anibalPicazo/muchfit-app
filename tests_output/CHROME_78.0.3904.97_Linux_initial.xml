@@ -1,19 +1,99 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites errors="0"
-            failures="0"
+            failures="1"
             tests="1">
 
   <testsuite name="initial"
-    errors="0" failures="0" hostname="" id="" package="initial" skipped="0"
-    tests="1" time="3.645" timestamp="">
+    errors="0" failures="1" hostname="" id="" package="initial" skipped="0"
+    tests="1" time="4.762" timestamp="">
   
-    <testcase name="Demo test Google" classname="initial" time="3.645" assertions="3">
+    <testcase name="Demo test Google" classname="initial" time="4.762" assertions="3">
 
     
 
-    
+      <failure message="Testing if element &lt;#main&gt; contains text: &#34;Night Watch&#34; in 1000 ms. - expected [0;32m&#34;Night Watch&#34;[0m but got: [0;31m&#34;Modos de búsqueda
+Todo
+Noticias
+Imágenes
+Vídeos
+Shopping
+Más
+Configuración
+Herramientas
+Aproximadamente 8.700.000 resultados (0,45 segundos) 
 
-    
+
+Un recordatorio de privacidad de Google
+RECORDARME MÁS TARDE
+LEER
+Resultados de la búsqueda
+Resultados web
+Nightwatch.js | Node.js powered End-to-End testing framework
+https://nightwatchjs.org
+Traducir esta página
+Write efficient end-to-end tests in Node.js and run them against W3C WebDriver.
+getLocationInView · getLogTypes · setAlertText() · setCookie
+nightwatchjs/nightwatch: End-to-end testing ... - GitHub
+https://github.com › nightwatchjs › nightwatch
+Traducir esta página
+End-to-end testing framework written in Node.js and using the Webdriver API - nightwatchjs/nightwatch.
+Automation Testing with Nightwatch JS and Cucumber - Medium
+https://medium.com › velotio-perspectives › automatio...
+Traducir esta página
+Nightwatch.js is an automated testing framework for web applications and websites, written in Node.js and using the W3C WebDriver API (formerly Selenium ...
+Getting started with automation testing and Nightwatch.js
+https://medium.com › devnetwork › getting-started-wit...
+Traducir esta página
+13 dic. 2018 - As we all known software development is very tricky thing and everyday it requires new feature to be added. And whenever any of the feature ...
+Nightwatch.js. Instalación y primeras pruebas (I) - Testeando ...
+https://testeandosoftware.com › nightwatch-js-instalacion-y-primeras-prueb...
+20 feb. 2015 - Tutorial sobre como automatizar pruebas de navegador a partir de un proyecto construido en node.js utilizando el framework Nightwatch.js.
+Selenium testing with Nightwatch | BrowserStack
+https://www.browserstack.com › automate › nightwatch
+Traducir esta página
+Your guide to running Selenium Webdriver tests with Nightwatch on BrowserStack.
+Nightwatch-Cucumber para pruebas de aceptación, ¿te ...
+https://www.paradigmadigital.com › dev › nightwatch-cucumber-pruebas-...
+18 dic. 2017 - Nightwatch-Cucumber para pruebas de aceptación, ¿te atreves?, Cualquiera de nosotros, de los que nos dedicamos de un modo u otro al ...
+End-to-End Test Automation Using Nightwatch - DZone DevOps
+https://dzone.com › articles › test-automation-using-ni...
+Traducir esta página
+21 may. 2018 - This tutorial will show you how to use Nightwatch, an automated testing and continuous integration framework, as an end-to-end browser ...
+Automatizando pruebas en idealista con Selenium y ...
+https://www.idealista.com › labs › blog › engineering › automatizando-pru...
+17 nov. 2015 - Resumen del taller que realizamos en idealista sobre pruebas automáticas de navegación utilizando Selenium y Nightwatch.js.
+Nightwatch.js Basics and Examples | Sauce Labs
+https://saucelabs.com › blog › nightwatchjs-makes-soft...
+Traducir esta página
+Nightwatch.js makes software test scripts fun and easy. Learn how to develop a set of test scripts quickly and effortlessly using Nightwatch.
+Step: Action
+Búsquedas relacionadas con nightwatch
+nightwatch api
+nightwatch is visible
+nightwatch marvel
+nightwatch github
+nightwatch diabetes
+nightwatch react testing
+nightwatch tutorial
+npm nightwatch
+Navegación de páginas
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+Siguiente
+Enlaces a pie de página
+EspañaAlbacete - Según tu dirección de Internet - Usar ubicación precisa - Más información
+AyudaEnviar comentariosPrivacidadCondiciones&#34;[0m">    at Object.Demo test Google (/var/www/html/muchfit-app/tests/initial.js:10:21)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)</failure>
+
+    <failure message="    at Object.Demo test Google (/var/www/html/muchfit-app/tests/initial.js:10:21)">    at processTicksAndRejections (internal/process/task_queues.js:93:5)</failure>
     </testcase>
   
 
