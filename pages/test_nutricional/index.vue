@@ -164,7 +164,7 @@
         components: {Notification},
         data() {
             return {
-                item: {'genero': 'mujer','estado_fisico_objetivo':'Delgado','estado_fisico':'Delgado'},
+                item: {'genero': 'mujer','estado_fisico_objetivo':'Definido','estado_fisico':'Tasado'},
                 isNew:false,
             }
         },
@@ -178,10 +178,10 @@
         methods:{
             async submmit()  {
                 this.item.uuid = this.$uuid.v4()
-              //  let response = await this.$axios.post(`/test_nutricion`,this.item)
+                let response = await this.$axios.post(`/test_nutricion`,this.item)
                 console.log('response', this.item);
-              //  this.$store.commit("notification/show", {color:"success", text: 'Test de nutricion creado.'});
-              //  this.$router.push('/dieta')
+                this.$store.commit("notification/show", {color:"success", text: 'Test de nutricion creado.'});
+                this.$router.push('/dieta')
             },
           async getTest() {
             let response = await  this.$axios.get(`/test_rutina`)

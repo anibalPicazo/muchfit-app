@@ -17,7 +17,7 @@ module.exports = {
             .keys(browser.Keys.ENTER)
             .pause(4000)
             .click('button[id=submit]')
-            .pause(5000)
+            .pause(6000)
             .assert.containsText('#__nuxt', 'aclimatacion')
             .end()
 

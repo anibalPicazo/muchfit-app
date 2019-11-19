@@ -5,9 +5,11 @@
 
   <testsuite name="testNutricion"
     errors="0" failures="0" hostname="" id="" package="testNutricion" skipped="0"
-    tests="1" time="32.66" timestamp="">
+    tests="1" time="11.73" timestamp="">
   
-    <testcase name="step one: login" classname="testNutricion" time="32.66" assertions="2">
+    <testcase name="step one: login" classname="testNutricion" time="11.73" assertions="3">
+
+    
 
     
 

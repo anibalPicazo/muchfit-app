@@ -85,11 +85,13 @@
           {
             icon: 'mdi-weight-lifter',
             title: 'Mi Rutina',
-            to: '/rutina'
+            to: '/rutina',
+            id: 'rutina'
           },{
             icon: 'mdi-food-apple',
             title: 'Mi Dieta',
-            to: '/dieta'
+            to: '/dieta',
+            id: 'dieta'
           },
           {
             icon: 'mdi-clipboard-alert-outline',
