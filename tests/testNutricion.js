@@ -6,6 +6,10 @@ module.exports = {
             .setValue('input[id=username]', 'admin')
             .setValue('input[id=password]', 'admin')
             .click('button[id=btn]')
+
+    },
+    'step two: make test nutricion' : function (browser) {
+        browser
             .pause(1000)
             .click('button[id=btnmenu]')
             .pause(1000)
@@ -25,13 +29,7 @@ module.exports = {
             .pause(5000)
             .assert.containsText('#__nuxt', 'hipocalorica')
             .end()
-
-
     }
-};
 
+    };
 
-
-//.click('button[id=btnEnviar]')
-//    .pause(5000)
-//    .assert.containsText('#__nuxt', 'Hipocalorica')

@@ -6,6 +6,11 @@ module.exports = {
             .setValue('input[id=username]', 'admin')
             .setValue('input[id=password]', 'admin')
             .click('button[id=btn]')
+
+
+    },
+    'step two: make test entrenamiento' : function (browser) {
+        browser
             .pause(1000)
             .click('button[id=btnmenu]')
             .pause(1000)
@@ -23,6 +28,7 @@ module.exports = {
 
 
     }
+
 };
 
 
