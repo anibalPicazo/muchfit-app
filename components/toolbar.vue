@@ -94,7 +94,8 @@
           {
             icon: 'mdi-clipboard-alert-outline',
             title: 'Test Nutricional',
-            to: '/test_nutricional'
+            to: '/test_nutricional',
+            id: 'testNutricion'
           },
           {
             icon: 'mdi-clipboard-pulse',
