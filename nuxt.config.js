@@ -3,7 +3,7 @@ require('dotenv').config()
 
 export default {
   env: {
-    BASE_URL: process.env.BASE_URL || 'http://localhost:8000/api'
+    BASE_URL: process.env.BASE_URL || 'http://localhost:8000'
   },
   mode: 'universal',
   /*
@@ -63,9 +63,9 @@ export default {
     strategies: {
       local: {
         endpoints: {
-          login: {url: "/auth", method: "post", propertyName: "token"},
+          login: {url: "/api/auth", method: "post", propertyName: "token"},
           logout: false,
-          user: {url: "/users/current", method: "get", propertyName: false}
+          user: {url: "/api/users/current", method: "get", propertyName: false}
         },
         // tokenRequired: true,
         // tokenType: 'bearer'

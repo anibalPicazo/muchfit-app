@@ -91,14 +91,14 @@
         methods:{
             async submmit()  {
                 this.item.uuid = this.$uuid.v4();
-                let response = await this.$axios.post(`/test_entrenamientos`,this.item)
+                let response = await this.$axios.post(`/api/test_entrenamientos`,this.item)
                 console.log('item sended', response.data);
                 this.$store.commit("notification/show", {color:"success", text: 'Test de entrenamiento creado.'});
                 this.$router.push('/rutina')
 
             },
             async getTest() {
-                let response = await  this.$axios.get(`/test_entrenamientos`)
+                let response = await  this.$axios.get(`/api/test_entrenamientos`)
                 if(response.data.len> 0){
                     this.item = response.data
                 }

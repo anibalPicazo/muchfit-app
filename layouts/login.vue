@@ -1,6 +1,8 @@
 <template>
   <v-app id="inspire">
     <v-content>
+      <notification/>
+
 
       <nuxt />
 
@@ -9,7 +11,10 @@
 </template>
 
 <script>
+    import Notification from "../components/Notification";
+
     export default {
+        components: { Notification },
 
     }
 </script>

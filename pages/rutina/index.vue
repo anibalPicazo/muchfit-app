@@ -220,7 +220,7 @@
         },
         methods:{
             async getRutina(){
-                let response = await this.$axios.get(`/users/${this.user.uuid}/rutina`)
+                let response = await this.$axios.get(`/api/users/${this.user.uuid}/rutina`)
                 this.item = response.data
                 this.dias = response.data.dia
                 console.log('dia',this.dias);

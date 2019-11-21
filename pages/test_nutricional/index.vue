@@ -182,7 +182,7 @@
             async submmit()  {
                 if(this.$refs.form.validate()){
                     this.item.uuid = this.$uuid.v4()
-                    let response = await this.$axios.post(`/test_nutricion`,this.item)
+                    let response = await this.$axios.post(`/api/test_nutricion`,this.item)
                     console.log('response', this.item);
                     this.$store.commit("notification/show", {color:"success", text: 'Test de nutricion creado.'});
                     this.$router.push('/dieta')
@@ -195,7 +195,7 @@
 
             },
           async getTest() {
-            let response = await  this.$axios.get(`/test_rutina`)
+            let response = await  this.$axios.get(`/api/test_rutina`)
             if(response.data.len> 0){
               this.item = response.data
             }
