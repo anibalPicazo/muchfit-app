@@ -22,7 +22,7 @@
             <v-list-item class="ma-1 shadow-1 ml-4">
               <v-list-item-content>
                 <div class="overline">
-                 <v-btn color="grey darken-3" elevation="0" @click="logout"> <v-icon color="error" class="mr-3">mdi-location-exit</v-icon></v-btn>
+                 <v-btn id="logout" color="grey darken-3" elevation="0" @click="logout"> <v-icon color="error" class="mr-3">mdi-location-exit</v-icon></v-btn>
                 </div>
               </v-list-item-content>
             </v-list-item>
@@ -32,6 +32,7 @@
         <v-list-item
           v-for="(item, i) in items"
           :key="i"
+          :id="item.id"
           :to="item.to"
           router
           exact
@@ -53,9 +54,10 @@
       app
       color="primary" dark style="box-shadow: none !important;"
     >
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer"  />
+      <v-btn id="btnmenu"  @click.stop="drawer = !drawer" icon> <v-icon> mdi-menu</v-icon>  </v-btn>
 
-      <v-avatar><img src="../assets/images/logov1peq.png" alt="avatar"></v-avatar>
+
+      <v-avatar><img src="../assets/images/logov1peq.png" alt="avatar"> </v-avatar>
     </v-app-bar>
 
   </div>
@@ -72,7 +74,8 @@
           {
             icon: 'mdi-apps',
             title: 'Panel de control',
-            to: '/dashboard'
+            to: '/dashboard',
+            id:'dasboard'
           },
           {
             icon: 'mdi-book-open-page-variant',
@@ -82,21 +85,26 @@
           {
             icon: 'mdi-weight-lifter',
             title: 'Mi Rutina',
-            to: '/rutina'
+            to: '/rutina',
+            id: 'rutina'
           },{
             icon: 'mdi-food-apple',
             title: 'Mi Dieta',
-            to: '/dieta'
+            to: '/dieta',
+            id: 'dieta'
           },
           {
             icon: 'mdi-clipboard-alert-outline',
             title: 'Test Nutricional',
-            to: '/test_nutricional'
+            to: '/test_nutricional',
+            id: 'testNutricion'
           },
           {
             icon: 'mdi-clipboard-pulse',
             title: 'Test Rutina',
-            to: '/test_entrenamiento'
+            to: '/test_entrenamiento',
+            id:'testEntrenamiento'
+
           }
 
         ],

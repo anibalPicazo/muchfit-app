@@ -9,7 +9,7 @@
             elevation="8"
             height="40px"
           >
-            <v-icon large color="white">mdi-progress-clock </v-icon><span style="color: white"> Test de entrenamiento</span>
+            <v-icon large color="white">mdi-progress-clock </v-icon><span style="color: white" id="icon"> Test de entrenamiento</span>
           </v-sheet>
           <v-row>
             <v-col md="12" sm="12">
@@ -23,6 +23,7 @@
                 <v-col class="mt-3">
 
                   <v-autocomplete
+                    id="selectExperiencia"
                     v-model="item.experiencia_deporte"
                     :items="['De cero a dos meses', 'De dos a ocho meses', 'De ocho meses a un año', 'Más de un año']"
                     label="Experiencia en el gimasio"
@@ -31,6 +32,7 @@
                 <v-col>
                   <v-autocomplete
                     v-model="item.frecuencia"
+                    id="selectFrecuencia"
                     :items="['Menos de 2 días', 'Entre 2 y 3 días', 'Más de 3 días']"
                     label="Frecuencia de entrenamiento"
                   ></v-autocomplete>
@@ -38,6 +40,7 @@
                 <v-col>
                   <v-autocomplete
                     v-model="item.objetivo"
+                    id="selectObjetivo"
                     :items="['Hipertrofia', 'Ganancia de fuerza']"
                     label="Frecuencia de entrenamiento"
                   ></v-autocomplete>
@@ -46,6 +49,7 @@
                 </v-col>
                 <v-col>
                   <v-autocomplete
+                    id="selectFormaFisica"
                     v-model="item.forma_fisica"
                     :items="['Malo', 'Normal', 'Bueno']"
                     label="Estado físico percibido"
@@ -56,7 +60,7 @@
           </v-row>
           <v-row class="mx-auto" >
             <v-col md="12">
-              <v-btn class="primary" block @click="submmit"> Enviar
+              <v-btn  id="submit"class="primary" block @click="submmit"> Enviar
               </v-btn>
             </v-col>
           </v-row>
@@ -87,14 +91,14 @@
         methods:{
             async submmit()  {
                 this.item.uuid = this.$uuid.v4();
-                let response = await this.$axios.post(`/test_entrenamientos`,this.item)
+                let response = await this.$axios.post(`/api/test_entrenamientos`,this.item)
                 console.log('item sended', response.data);
                 this.$store.commit("notification/show", {color:"success", text: 'Test de entrenamiento creado.'});
                 this.$router.push('/rutina')
 
             },
             async getTest() {
-                let response = await  this.$axios.get(`/test_entrenamientos`)
+                let response = await  this.$axios.get(`/api/test_entrenamientos`)
                 if(response.data.len> 0){
                     this.item = response.data
                 }

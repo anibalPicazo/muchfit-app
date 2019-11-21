@@ -9,41 +9,33 @@
     </v-card-title>
     <v-card-text>
       <v-container>
+        <v-form ref="form" lazy-validation v-model="valid" >
+
         <v-row>
           <v-col cols="12" sm="6" md="6">
-            <v-text-field label="Nombre*" required></v-text-field>
+            <v-text-field :rules="[v => !!v || 'Obligatorio']" required v-model="item.name" label="Nombre" required></v-text-field>
           </v-col>
           <v-col cols="12" sm="6" md="6">
-            <v-text-field label="Apellido*" hint="example of helper text only on focus"></v-text-field>
+            <v-text-field :rules="[v => !!v || 'Obligatorio']" required v-model="item.surname" label="Apellido" hint="example of helper text only on focus"></v-text-field>
           </v-col>
           <v-col cols="12">
-            <v-text-field label="Email*"required></v-text-field>
+            <v-text-field :rules="[v => !!v || 'Obligatorio']" required v-model="item.email" label="Email"required></v-text-field>
           </v-col>
           <v-col cols="12">
-            <v-text-field label="Password*" hint="Introduce una contraseña de mas de 5 caracteres" type="password" required></v-text-field>
+            <v-text-field :rules="[v => !!v || 'Obligatorio']" required v-model="item.username" label="Username"required></v-text-field>
           </v-col>
           <v-col cols="12" sm="6">
-            <v-select
-              :items="['0-17', '18-29', '30-54', '54+']"
-              label="Age*"
-              required
-            ></v-select>
-          </v-col>
-          <v-col cols="12" sm="6">
-            <v-autocomplete
-              :items="['Skiing', 'Ice hockey', 'Soccer', 'Basketball', 'Hockey', 'Reading', 'Writing', 'Coding', 'Basejump']"
-              label="Interests"
-              multiple
-            ></v-autocomplete>
+            <v-text-field :rules="[v => !!v || 'Obligatorio']" required v-model="item.password" label="Password" hint="Introduce una contraseña de mas de 5 caracteres" type="password" required></v-text-field>
           </v-col>
         </v-row>
+        </v-form>
+
       </v-container>
-      <small>*indicates required field</small>
     </v-card-text>
     <v-card-actions>
       <v-spacer></v-spacer>
       <v-btn color="blue darken-1" text @click="dialog = false">Close</v-btn>
-      <v-btn color="blue darken-1" text @click="dialog = false">Save</v-btn>
+      <v-btn color="blue darken-1" text @click="submit">Save</v-btn>
     </v-card-actions>
   </v-card>
 </v-dialog>
@@ -53,8 +45,22 @@
     name: "register",
     data () {
       return {
+        item:{},
+        valid:false,
         dialog:false
       }
+    },
+    methods:{
+      async submit(){
+        if(this.$refs.form.validate()){
+        console.log('sended item',this.item);
+        this.item.uuid = this.$uuid.v4();
+        let respone = await this.$axios.post('/register',this.item);
+        this.dialog=false;
+        }else{
+            this.$store.commit("notification/show", {color:"error", text: 'Completa los campos obligatorios'});
+        }
+    }
     }
   }
 </script>

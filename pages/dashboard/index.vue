@@ -1,10 +1,10 @@
 <template>
-  <div>
-      <v-container fluid>
+  <div id="body">
+      <v-container fluid >
         <v-row >
          <v-col md="7" sm="12" >
             <v-card>
-              <v-card-title> Comidas recomendadas</v-card-title>
+              <v-card-title>Comidas recomendadas</v-card-title>
               <v-row justify="space-between" class="mb-3 pa-3" >
              <v-col md="3"  sm="12">
                <v-card

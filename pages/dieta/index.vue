@@ -114,7 +114,7 @@
         },
         methods:{
             async getRutina(){
-                let response = await this.$axios.get(`/users/${this.user.uuid}/dieta`)
+                let response = await this.$axios.get(`/api/users/${this.user.uuid}/dieta`)
                 this.item = response.data
                 this.dias = response.data.dias_dieta
                 console.log('dia',this.dias);

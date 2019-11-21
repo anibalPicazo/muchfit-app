@@ -3,6 +3,7 @@
     <v-row justify="center"  fill >
       <v-col cols="12"  sm="9" md="9">
         <v-card class="mt-5" elevation="10" >
+          <v-form ref="form" lazy-validation v-model="valid" >
           <v-sheet
             class="v-sheet--offset ml-4"
             color="blue"
@@ -26,35 +27,35 @@
                 <h2 class="mt-3"> Cuestionario </h2>
                 <v-row>
                 <v-col>
-                  <v-text-field type="number" v-model="item.edad" label="Edad" ></v-text-field>
+                  <v-text-field  :rules="[v => !!v || 'Obligatorio']" required id="edad" type="number" v-model="item.edad" label="Edad" ></v-text-field>
                 </v-col>
                 <v-col>
-                  <v-text-field  suffix="Kg" type="number" v-model="item.peso" label="Peso" ></v-text-field>
+                  <v-text-field  :rules="[v => !!v || 'Obligatorio']" required  id="peso" suffix="Kg" type="number" v-model="item.peso" label="Peso" ></v-text-field>
                 </v-col>
                 <v-col>
-                  <v-text-field  suffix="cm" type="number" v-model="item.altura" label="Altura" ></v-text-field>
+                  <v-text-field :rules="[v => !!v || 'Obligatorio']" required id="altura"  suffix="cm" type="number" v-model="item.altura" label="Altura" ></v-text-field>
                 </v-col>
                   <v-col>
-                    <v-select v-model="item.actividad_fisica" :items="['Hiperactivo','Muy activo','Moderadamente activo','Levemente activo','Sedentario']"  label="Actividad" ></v-select>
+                    <v-autocomplete :rules="[v => !!v || 'Obligatorio']" required id="actividad_fisica" v-model="item.actividad_fisica" :items="['Hiperactivo','Muy activo','Moderadamente activo','Levemente activo','Sedentario']"  label="Actividad" ></v-autocomplete>
                 </v-col>
                 </v-row>
                 <v-row>
                   <v-col>
-                  <v-radio-group  row v-model="item.genero">
+                  <v-radio-group  row v-model="item.genero" id="genero">
                     <v-icon large color="blue">mdi-gender-male  </v-icon>
-                    <v-radio label="Hombre" value="hombre"> </v-radio>
+                    <v-radio id="hombre" label="Hombre" value="hombre"> </v-radio>
                     <v-icon large color="pink">mdi-gender-female </v-icon>
-                    <v-radio label="Mujer" value="mujer"></v-radio>
+                    <v-radio aria-checked="true" id="mujer" label="Mujer" value="mujer"></v-radio>
                   </v-radio-group>
                   </v-col>
                   <v-col>
-                    <v-text-field type="number" v-model="item.imc"  label="IMC" ></v-text-field>
+                    <v-text-field id="imc" type="number" v-model="item.imc"  label="IMC" ></v-text-field>
                   </v-col>
                   <v-col>
-                    <v-text-field  type="number" suffix="%" v-model="item.grasa"  label="% Grasa" ></v-text-field>
+                    <v-text-field  id="grasa" type="number" suffix="%" v-model="item.grasa"  label="% Grasa" ></v-text-field>
                   </v-col>
                   <v-col>
-                    <v-select v-model="item.experiencia" :items="['Más de un año','Menos de dos años','De dos a cuatro años']"  label="Experiencia" ></v-select>
+                    <v-autocomplete :rules="[v => !!v || 'Obligatorio']" required id="experiencia" v-model="item.experiencia" :items="['Más de un año','Menos de dos años','De dos a cuatro años']"  label="Experiencia" ></v-autocomplete>
                   </v-col>
                 </v-row>
               </v-card-text>
@@ -65,7 +66,7 @@
 
 
           <v-row justify="center" >
-            <v-radio-group row v-model="item.estado_fisico" >
+            <v-radio-group row v-model="item.estado_fisico"  id="estado_fisicio">
               <v-row >
             <v-col sm="4" >
               <v-row>
@@ -75,7 +76,7 @@
                 </v-img>
               </v-row>
               <v-row>
-                <v-radio label="Delgado" value="Delgado"></v-radio>
+                <v-radio id="estado_delgado" label="Delgado" value="Delgado"></v-radio>
               </v-row>
             </v-col >
             <v-col sm="4">
@@ -86,7 +87,7 @@
                 </v-img>
               </v-row>
               <v-row>
-                <v-radio label="Normal" value="Definido"></v-radio>
+                <v-radio id="estado_definido" label="Normal" value="Definido"></v-radio>
               </v-row>
             </v-col>
             <v-col sm="4">
@@ -97,7 +98,7 @@
                 </v-img>
               </v-row>
               <v-row>
-                <v-radio label="Fuerte" value="Tasado"></v-radio>
+                <v-radio id="estado_tasado" label="Fuerte" value="Tasado"></v-radio>
               </v-row>
             </v-col>
               </v-row>
@@ -105,7 +106,7 @@
           </v-row>
           <span> ¿A que físico te quieres parecer?</span>
           <v-row  justify="center">
-            <v-radio-group row v-model="item.estado_fisico_objetivo" >
+            <v-radio-group row v-model="item.estado_fisico_objetivo" id="objetivo_fisico" >
               <v-row >
             <v-col sm="4" >
               <v-row>
@@ -115,7 +116,7 @@
                 </v-img>
               </v-row>
               <v-row>
-                <v-radio label="Delgado" value="Delgado"></v-radio>
+                <v-radio id="objetivo_delgado" label="Delgado" value="Delgado"></v-radio>
               </v-row>
             </v-col >
             <v-col sm="4">
@@ -126,7 +127,7 @@
                 </v-img>
               </v-row>
               <v-row>
-                <v-radio label="Normal" value="Definido"></v-radio>
+                <v-radio id="objetivo_definido" label="Normal" value="Definido"></v-radio>
               </v-row>
             </v-col>
             <v-col sm="4">
@@ -137,7 +138,7 @@
                 </v-img>
               </v-row>
               <v-row>
-                <v-radio label="Fuerte" value="Tasado"></v-radio>
+                <v-radio id="objetivo_tasado" label="Fuerte" value="Tasado"></v-radio>
               </v-row>
             </v-col>
               </v-row>
@@ -145,11 +146,12 @@
           </v-row>
           <v-row class="mx-auto" >
            <v-col md="12">
-             <v-btn class="primary" block @click="submmit">
+             <v-btn  id="btnEnviar" class="primary" block @click="submmit">
                Enviar
              </v-btn>
            </v-col>
           </v-row>
+          </v-form>
         </v-card>
       </v-col>
     </v-row>
@@ -164,7 +166,8 @@
         components: {Notification},
         data() {
             return {
-                item: {},
+                valid:false,
+                item: {'genero': 'mujer','estado_fisico_objetivo':'Definido','estado_fisico':'Tasado'},
                 isNew:false,
             }
         },
@@ -177,14 +180,22 @@
       },
         methods:{
             async submmit()  {
-                this.item.uuid = this.$uuid.v4()
-                let response = await this.$axios.post(`/test_nutricion`,this.item)
-                console.log('response', response);
-                this.$store.commit("notification/show", {color:"success", text: 'Test de nutricion creado.'});
-                this.$router.push('/dieta')
+                if(this.$refs.form.validate()){
+                    this.item.uuid = this.$uuid.v4()
+                    let response = await this.$axios.post(`/api/test_nutricion`,this.item)
+                    console.log('response', this.item);
+                    this.$store.commit("notification/show", {color:"success", text: 'Test de nutricion creado.'});
+                    this.$router.push('/dieta')
+                }else{
+                    this.$store.commit("notification/show", {color:"error", text: 'Completa los campos obligatorios'});
+
+                }
+
+
+
             },
           async getTest() {
-            let response = await  this.$axios.get(`/test_rutina`)
+            let response = await  this.$axios.get(`/api/test_rutina`)
             if(response.data.len> 0){
               this.item = response.data
             }

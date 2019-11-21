@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="0"
+            tests="1">
+
+  <testsuite name="logout"
+    errors="0" failures="0" hostname="" id="" package="logout" skipped="0"
+    tests="1" time="7.205" timestamp="">
+  
+    <testcase name="Test Logout" classname="logout" time="7.205" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+
+  
+
+  
+  </testsuite>
+</testsuites>
