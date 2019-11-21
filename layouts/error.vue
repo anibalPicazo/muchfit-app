@@ -1,14 +1,35 @@
 <template>
   <v-app dark>
-    <h1 v-if="error.statusCode === 404">
-      {{ pageNotFound }}
-    </h1>
-    <h1 v-else>
-      {{ otherError }}
-    </h1>
-    <NuxtLink to="/">
-      Home page
-    </NuxtLink>
+
+
+
+
+
+
+    <v-layout align-center fill-height>
+      <v-flex  xs12 md12>
+        <div style="max-width: 40%; margin: auto; text-align: center;">
+
+
+          <div style="width: 200px; border-radius: 10px; margin: auto; margin-bottom: 40px !important;">
+            <img src="../assets/images/dinosaur.png" style="width: 200px; padding-top: 5px; padding-right: 12px;">
+          </div>
+          <v-flex >
+
+            <h2>Upsss, ha ocurrido un error inesperado </h2>
+            <h2>Que no cunda el pánico</h2>
+            <h3>Porfavor intentelo de nuevo</h3>
+            <NuxtLink to="/">
+              Pagina de inicio
+            </NuxtLink>
+
+          </v-flex>
+        </div>
+      </v-flex>
+    </v-layout>
+
+
+
   </v-app>
 </template>
 

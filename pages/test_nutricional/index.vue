@@ -3,6 +3,7 @@
     <v-row justify="center"  fill >
       <v-col cols="12"  sm="9" md="9">
         <v-card class="mt-5" elevation="10" >
+          <v-form ref="form" lazy-validation v-model="valid" >
           <v-sheet
             class="v-sheet--offset ml-4"
             color="blue"
@@ -26,16 +27,16 @@
                 <h2 class="mt-3"> Cuestionario </h2>
                 <v-row>
                 <v-col>
-                  <v-text-field id="edad" type="number" v-model="item.edad" label="Edad" ></v-text-field>
+                  <v-text-field  :rules="[v => !!v || 'Obligatorio']" required id="edad" type="number" v-model="item.edad" label="Edad" ></v-text-field>
                 </v-col>
                 <v-col>
-                  <v-text-field id="peso" suffix="Kg" type="number" v-model="item.peso" label="Peso" ></v-text-field>
+                  <v-text-field  :rules="[v => !!v || 'Obligatorio']" required  id="peso" suffix="Kg" type="number" v-model="item.peso" label="Peso" ></v-text-field>
                 </v-col>
                 <v-col>
-                  <v-text-field id="altura"  suffix="cm" type="number" v-model="item.altura" label="Altura" ></v-text-field>
+                  <v-text-field :rules="[v => !!v || 'Obligatorio']" required id="altura"  suffix="cm" type="number" v-model="item.altura" label="Altura" ></v-text-field>
                 </v-col>
                   <v-col>
-                    <v-autocomplete id="actividad_fisica" v-model="item.actividad_fisica" :items="['Hiperactivo','Muy activo','Moderadamente activo','Levemente activo','Sedentario']"  label="Actividad" ></v-autocomplete>
+                    <v-autocomplete :rules="[v => !!v || 'Obligatorio']" required id="actividad_fisica" v-model="item.actividad_fisica" :items="['Hiperactivo','Muy activo','Moderadamente activo','Levemente activo','Sedentario']"  label="Actividad" ></v-autocomplete>
                 </v-col>
                 </v-row>
                 <v-row>
@@ -51,10 +52,10 @@
                     <v-text-field id="imc" type="number" v-model="item.imc"  label="IMC" ></v-text-field>
                   </v-col>
                   <v-col>
-                    <v-text-field id="grasa" type="number" suffix="%" v-model="item.grasa"  label="% Grasa" ></v-text-field>
+                    <v-text-field  id="grasa" type="number" suffix="%" v-model="item.grasa"  label="% Grasa" ></v-text-field>
                   </v-col>
                   <v-col>
-                    <v-autocomplete id="experiencia" v-model="item.experiencia" :items="['Más de un año','Menos de dos años','De dos a cuatro años']"  label="Experiencia" ></v-autocomplete>
+                    <v-autocomplete :rules="[v => !!v || 'Obligatorio']" required id="experiencia" v-model="item.experiencia" :items="['Más de un año','Menos de dos años','De dos a cuatro años']"  label="Experiencia" ></v-autocomplete>
                   </v-col>
                 </v-row>
               </v-card-text>
@@ -145,11 +146,12 @@
           </v-row>
           <v-row class="mx-auto" >
            <v-col md="12">
-             <v-btn id="btnEnviar" class="primary" block @click="submmit">
+             <v-btn  id="btnEnviar" class="primary" block @click="submmit">
                Enviar
              </v-btn>
            </v-col>
           </v-row>
+          </v-form>
         </v-card>
       </v-col>
     </v-row>
@@ -164,6 +166,7 @@
         components: {Notification},
         data() {
             return {
+                valid:false,
                 item: {'genero': 'mujer','estado_fisico_objetivo':'Definido','estado_fisico':'Tasado'},
                 isNew:false,
             }
@@ -177,11 +180,19 @@
       },
         methods:{
             async submmit()  {
-                this.item.uuid = this.$uuid.v4()
-                let response = await this.$axios.post(`/test_nutricion`,this.item)
-                console.log('response', this.item);
-                this.$store.commit("notification/show", {color:"success", text: 'Test de nutricion creado.'});
-                this.$router.push('/dieta')
+                if(this.$refs.form.validate()){
+                    this.item.uuid = this.$uuid.v4()
+                    let response = await this.$axios.post(`/test_nutricion`,this.item)
+                    console.log('response', this.item);
+                    this.$store.commit("notification/show", {color:"success", text: 'Test de nutricion creado.'});
+                    this.$router.push('/dieta')
+                }else{
+                    this.$store.commit("notification/show", {color:"error", text: 'Completa los campos obligatorios'});
+
+                }
+
+
+
             },
           async getTest() {
             let response = await  this.$axios.get(`/test_rutina`)
