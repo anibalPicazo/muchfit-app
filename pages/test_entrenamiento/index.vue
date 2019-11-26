@@ -42,7 +42,7 @@
                     v-model="item.objetivo"
                     id="selectObjetivo"
                     :items="['Hipertrofia', 'Ganancia de fuerza']"
-                    label="Frecuencia de entrenamiento"
+                    label="Objetivo"
                   ></v-autocomplete>
                 </v-col>
                 <v-col >
