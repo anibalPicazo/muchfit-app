@@ -178,17 +178,17 @@
                <v-spacer></v-spacer>
                <v-icon class="icon-toolbar">mdi-calendar</v-icon>
              </v-toolbar>
-             <v-calendar
-               class="pa-1"
-               color="primary"
-               type="month"
-               now="2019-01-08"
-               value="2019-01-08"
-               :events="events"
-               :event-color="getEventColor"
-               locale="ES-ES"
-               first-day-of-week="1"
-             ></v-calendar>
+<!--             <v-calendar-->
+<!--               class="pa-1"-->
+<!--               color="primary"-->
+<!--               type="month"-->
+<!--               now="2019-01-08"-->
+<!--               value="2019-01-08"-->
+<!--               :events="events"-->
+<!--               :event-color="getEventColor"-->
+<!--               locale="ES-ES"-->
+<!--               first-day-of-week="1"-->
+<!--             ></v-calendar>-->
            </v-row>
            </v-card>
 

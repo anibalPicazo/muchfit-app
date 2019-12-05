@@ -1,0 +1,42 @@
+runtime: nodejs10
+service: muchfit-app-prod
+
+#manual_scaling:
+#  instances: 1
+
+instance_class: F2
+#automatic_scaling:
+#  min_instances: 1
+#
+#resources:
+#  cpu: .5
+#  memory_gb: 1
+#  disk_size_gb: 10
+
+handlers:
+  # Serve all static files with urls ending with a file extension
+  -   url: /(.*\..+)$
+      static_files: dist/\1
+      upload: dist/(.*\..+)$
+    # catch all handler to index.html
+  -   url: /.*
+      static_files: dist/200.html
+      upload: dist/200.html
+
+#  - url: /_nuxt
+#    static_dir: dist
+#    secure: always
+#
+#  - url: /(.*\.(gif|png|jpg|ico|txt))$
+#    static_files: static/\1
+#    upload: static/.*\.(gif|png|jpg|ico|txt)$
+#    secure: always
+#
+#  - url: /.*
+#    script: auto
+#    secure: always
+
+env_variables:
+  HOST: '0.0.0.0'
+  NODE_ENV: 'production'
+  BASE_URL: 'https://muchfit-api-dot-muchfit.appspot.com/api/'
