@@ -55,7 +55,7 @@
                     <v-text-field  id="grasa" type="number" suffix="%" v-model="item.grasa"  label="% Grasa" ></v-text-field>
                   </v-col>
                   <v-col>
-                    <v-autocomplete :rules="[v => !!v || 'Obligatorio']" required id="experiencia" v-model="item.experiencia" :items="['Más de un año','Menos de dos años','De dos a cuatro años']"  label="Experiencia" ></v-autocomplete>
+                    <v-autocomplete  v-model="item.experiencia" :items="['Más de un año','Menos de dos años','De dos a cuatro años']"  label="Experiencia" ></v-autocomplete>
                   </v-col>
                 </v-row>
               </v-card-text>

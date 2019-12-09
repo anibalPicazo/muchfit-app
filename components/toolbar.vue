@@ -118,10 +118,10 @@
             this.$router.push("/login")
         },
         manageView(item){
-         if(item.title === 'Mi Rutinar'){
+         if(item.title === 'Mi Rutina'){
              return !! this.$auth.user.rutina;
          }
-         if(item.title === 'Mi Dietar'){
+         if(item.title === 'Mi Dieta'){
              return !! this.$auth.user.dieta;
 
          }

@@ -28,21 +28,21 @@
                   <v-text-field
                     :required="true"
                     v-model="item.proteina"
-                    label="Dificultad"
+                    label="Nivel de Proteínas"
                   ></v-text-field>
                 </v-col>
-                <v-col cols="12" sm="12" md="1">
+                <v-col cols="12" sm="12" md="3">
                   <v-text-field
                     :required="true"
                     v-model="item.nivel_carbohidratos"
-                    label="Frecuencia"
+                    label="Nivel de Carbohidratos"
                   ></v-text-field>
                 </v-col>
-                <v-col cols="12" sm="6" md="1">
+                <v-col cols="12" sm="6" md="3">
                   <v-text-field
                     :required="true"
                     v-model="item.nivel_grasas"
-                    label="Volumen"
+                    label="Nivel de Grasas"
                   ></v-text-field>
                 </v-col>
               </v-row>
