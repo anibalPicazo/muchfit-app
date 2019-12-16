@@ -1,11 +1,21 @@
 import colors from 'vuetify/es5/util/colors'
 require('dotenv').config()
 
-export default {
-  env: {
-    BASE_URL: process.env.BASE_URL || 'http://localhost:8000'
+const config = {
+  mode: 'spa',
+  vue: {
+    config: {
+      productionTip: false,
+      devtools: (process.env.NODE_ENV !== 'production')
+    }
   },
-  mode: 'universal',
+  generate:{
+    devtools: (process.env.NODE_ENV !== 'production')
+  },
+  dev: (process.env.NODE_ENV !== 'production'),
+  env: {
+    BASE_URL: process.env.BASE_URL
+  },
   /*
   ** Headers of the page
   */
@@ -39,12 +49,6 @@ export default {
     {src: '~/plugins/vue-uuid', ssr: false},
 
 
-  ],
-  /*
-  ** Nuxt.js dev-modules
-  */
-  devModules: [
-    '@nuxtjs/vuetify',
   ],
   /*
   ** Nuxt.js modules
@@ -111,11 +115,27 @@ export default {
   ** Build configuration
   */
   build: {
+    vendor: ["handsontable", "vue-handsontable"],
+    devtools: true,
     /*
-    ** You can extend webpack config here
-    */
-    extend (config, ctx) {
+     ** You can extend webpack config here
+     */
+    extend(config, ctx) {
+      config.resolve.alias["vue"] = "vue/dist/vue.common";
+      if (ctx.isClient) {
+        config.devtool = '#source-map'
+      }
+    }
+  },
+  transition: {
+    name: "page",
+    mode: "out-in",
+    beforeEnter(el) {
+      //console.log("Before enter...")
     }
   }
-}
+};
 
+export default config;
+
+console.log('Nuxt config', config);
