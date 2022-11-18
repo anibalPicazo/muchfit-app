@@ -15,7 +15,7 @@
     "@nuxtjs/axios": "^5.8.0",
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/pwa": "^3.0.0-beta.19",
-    "nuxt": "^2.10.2",
+    "nuxt": "^2.15.8",
     "typeface-ibm-plex-serif": "0.0.75",
     "vue-uuid": "^1.1.1",
     "vuelidate": "^0.7.4",
