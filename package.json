@@ -15,19 +15,19 @@
     "@nuxtjs/axios": "^5.8.0",
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/pwa": "^3.0.0-beta.19",
-    "nuxt": "^2.10.2",
+    "nuxt": "^3.0.0",
     "typeface-ibm-plex-serif": "0.0.75",
     "vue-uuid": "^1.1.1",
     "vuelidate": "^0.7.4",
-    "vuetify-loader": "^1.4.3",
+    "vuetify-loader": "^1.9.2",
     "handsontable": "^7.2.2"
   },
   "devDependencies": {
-    "@nuxtjs/vuetify": "^1.9.1",
+    "@nuxtjs/vuetify": "^1.12.3",
     "chromedriver": "^78.0.1",
     "node-sass": "^4.13.0",
-    "sass-loader": "^7.3.1",
+    "sass-loader": "^13.2.0",
     "stylus": "^0.54.7",
-    "stylus-loader": "^3.0.2"
+    "stylus-loader": "^7.1.0"
   }
 }
