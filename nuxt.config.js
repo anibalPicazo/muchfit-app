@@ -87,7 +87,7 @@ const config = {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    baseURL: process.env.API_URL || 'http://be-water-my-plant-backend-production.up.railway.app/'
+    baseURL: process.env.API_URL || 'https://be-water-my-plant-backend-production.up.railway.app/'
   },
   /*
   ** vuetify module configuration
