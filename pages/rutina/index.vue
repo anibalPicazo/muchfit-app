@@ -1,18 +1,19 @@
 <template>
   <v-container fluid>
     <v-row justify="center" fill>
-      <v-col cols="12"  sm="7" md="7">
-        <v-card class="mt-5" elevation="10" >
+      <v-col cols="12" sm="7" md="7">
+        <v-card class="mt-5" elevation="10">
           <v-sheet
             class="v-sheet--offset ml-4"
             color="blue"
             elevation="8"
             height="40px"
           >
-            <v-icon large color="white">mdi-arm-flex-outline  </v-icon><span style="color: white"> Tu Rutina</span>
+            <v-icon large color="white">mdi-arm-flex-outline </v-icon
+            ><span style="color: white"> Tu Rutina</span>
           </v-sheet>
           <v-card-title>
-            {{item.nombre}}
+            {{ item.nombre }}
           </v-card-title>
           <v-card-text>
             <v-container>
@@ -55,35 +56,35 @@
               </v-row>
             </v-container>
           </v-card-text>
-<!--          <v-container>-->
-<!--            <v-card-title>Dia A</v-card-title>-->
-<!--            <v-row>-->
-<!--            <v-col cols="12">-->
-<!--            <v-data-table-->
-<!--              :headers="headers"-->
-<!--              :items="desserts"-->
-<!--              :items-per-page="5"-->
-<!--              class="elevation-1"-->
-<!--            ></v-data-table>-->
-<!--            </v-col>-->
-<!--          </v-row>-->
-<!--          </v-container>-->
-<!--          <v-container>-->
-<!--            <v-card-title>Dia B</v-card-title>-->
-<!--          <v-row>-->
-<!--            <v-col cols="12">-->
-<!--            <v-data-table-->
-<!--              :headers="headers"-->
-<!--              :items="desserts"-->
-<!--              :items-per-page="5"-->
-<!--              class="elevation-1"-->
-<!--            ></v-data-table>-->
-<!--            </v-col>-->
-<!--          </v-row>-->
-<!--          </v-container>-->
+          <!--          <v-container>-->
+          <!--            <v-card-title>Dia A</v-card-title>-->
+          <!--            <v-row>-->
+          <!--            <v-col cols="12">-->
+          <!--            <v-data-table-->
+          <!--              :headers="headers"-->
+          <!--              :items="desserts"-->
+          <!--              :items-per-page="5"-->
+          <!--              class="elevation-1"-->
+          <!--            ></v-data-table>-->
+          <!--            </v-col>-->
+          <!--          </v-row>-->
+          <!--          </v-container>-->
+          <!--          <v-container>-->
+          <!--            <v-card-title>Dia B</v-card-title>-->
+          <!--          <v-row>-->
+          <!--            <v-col cols="12">-->
+          <!--            <v-data-table-->
+          <!--              :headers="headers"-->
+          <!--              :items="desserts"-->
+          <!--              :items-per-page="5"-->
+          <!--              class="elevation-1"-->
+          <!--            ></v-data-table>-->
+          <!--            </v-col>-->
+          <!--          </v-row>-->
+          <!--          </v-container>-->
           <template v-for="list in this.dias">
             <v-container>
-              <v-card-title>{{list.nombre}}</v-card-title>
+              <v-card-title>{{ list.nombre }}</v-card-title>
               <v-row>
                 <v-col cols="12">
                   <v-data-table
@@ -95,9 +96,6 @@
                 </v-col>
               </v-row>
             </v-container>
-
-
-
           </template>
         </v-card>
       </v-col>
@@ -106,136 +104,139 @@
 </template>
 
 <script>
-
-    export default {
-        layout: "test",
-        data() {
-            return {
-                item: {nombre:'Rutina de Aclimatacion',desgaste_calorico:'800',dificultad_usuario:'Facil',frecuencia: '3',volumen:'2',duracion:'121'},
-                user : {},
-                dias: [],
-                headers: [
-                    {
-                        text: 'Nombre Ejercicio',
-                        align: 'left',
-                        sortable: false,
-                        value: 'ejercicio.descripcion',
-                    },
-                    { text: 'Series', value: 'serie' },
-                    { text: 'Repeticiones', value: 'repeticiones' },
-                    { text: 'Descanso', value: 'descanso' },
-                    { text: 'Intensidad', value: 'intensidad' },
-                ],
-                desserts: [
-                    {
-                        name: 'Frozen Yogurt',
-                        calories: 159,
-                        fat: 6.0,
-                        carbs: 24,
-                        protein: 4.0,
-                        iron: '1%',
-                    },
-                    {
-                        name: 'Ice cream sandwich',
-                        calories: 237,
-                        fat: 9.0,
-                        carbs: 37,
-                        protein: 4.3,
-                        iron: '1%',
-                    },
-                    {
-                        name: 'Eclair',
-                        calories: 262,
-                        fat: 16.0,
-                        carbs: 23,
-                        protein: 6.0,
-                        iron: '7%',
-                    },
-                    {
-                        name: 'Cupcake',
-                        calories: 305,
-                        fat: 3.7,
-                        carbs: 67,
-                        protein: 4.3,
-                        iron: '8%',
-                    },
-                    {
-                        name: 'Gingerbread',
-                        calories: 356,
-                        fat: 16.0,
-                        carbs: 49,
-                        protein: 3.9,
-                        iron: '16%',
-                    },
-                    {
-                        name: 'Jelly bean',
-                        calories: 375,
-                        fat: 0.0,
-                        carbs: 94,
-                        protein: 0.0,
-                        iron: '0%',
-                    },
-                    {
-                        name: 'Lollipop',
-                        calories: 392,
-                        fat: 0.2,
-                        carbs: 98,
-                        protein: 0,
-                        iron: '2%',
-                    },
-                    {
-                        name: 'Honeycomb',
-                        calories: 408,
-                        fat: 3.2,
-                        carbs: 87,
-                        protein: 6.5,
-                        iron: '45%',
-                    },
-                    {
-                        name: 'Donut',
-                        calories: 452,
-                        fat: 25.0,
-                        carbs: 51,
-                        protein: 4.9,
-                        iron: '22%',
-                    },
-                    {
-                        name: 'KitKat',
-                        calories: 518,
-                        fat: 26.0,
-                        carbs: 65,
-                        protein: 7,
-                        iron: '6%',
-                    },
-                ],
-            }
+export default {
+  layout: "test",
+  data() {
+    return {
+      item: {
+        nombre: "Rutina de Aclimatacion",
+        desgaste_calorico: "800",
+        dificultad_usuario: "Facil",
+        frecuencia: "3",
+        volumen: "2",
+        duracion: "121",
+      },
+      user: {},
+      dias: [],
+      headers: [
+        {
+          text: "Nombre Ejercicio",
+          align: "left",
+          sortable: false,
+          value: "ejercicio.descripcion",
         },
-        mounted(){
-            this.user = this.$auth.user;
-            console.log('user',this.user);
-            this.getRutina()
+        { text: "Series", value: "serie" },
+        { text: "Repeticiones", value: "repeticiones" },
+        { text: "Descanso", value: "descanso" },
+        { text: "Intensidad", value: "intensidad" },
+      ],
+      desserts: [
+        {
+          name: "Frozen Yogurt",
+          calories: 159,
+          fat: 6.0,
+          carbs: 24,
+          protein: 4.0,
+          iron: "1%",
         },
-        watch: {
-
+        {
+          name: "Ice cream sandwich",
+          calories: 237,
+          fat: 9.0,
+          carbs: 37,
+          protein: 4.3,
+          iron: "1%",
         },
-        methods:{
-            async getRutina(){
-                let response = await this.$axios.get(`/api/users/${this.user.uuid}/rutina`)
-                this.item = response.data
-                this.dias = response.data.dia
-                console.log('dia',this.dias);
-                console.log(this.item);
-            }
+        {
+          name: "Eclair",
+          calories: 262,
+          fat: 16.0,
+          carbs: 23,
+          protein: 6.0,
+          iron: "7%",
+        },
+        {
+          name: "Cupcake",
+          calories: 305,
+          fat: 3.7,
+          carbs: 67,
+          protein: 4.3,
+          iron: "8%",
+        },
+        {
+          name: "Gingerbread",
+          calories: 356,
+          fat: 16.0,
+          carbs: 49,
+          protein: 3.9,
+          iron: "16%",
+        },
+        {
+          name: "Jelly bean",
+          calories: 375,
+          fat: 0.0,
+          carbs: 94,
+          protein: 0.0,
+          iron: "0%",
+        },
+        {
+          name: "Lollipop",
+          calories: 392,
+          fat: 0.2,
+          carbs: 98,
+          protein: 0,
+          iron: "2%",
+        },
+        {
+          name: "Honeycomb",
+          calories: 408,
+          fat: 3.2,
+          carbs: 87,
+          protein: 6.5,
+          iron: "45%",
+        },
+        {
+          name: "Donut",
+          calories: 452,
+          fat: 25.0,
+          carbs: 51,
+          protein: 4.9,
+          iron: "22%",
+        },
+        {
+          name: "KitKat",
+          calories: 518,
+          fat: 26.0,
+          carbs: 65,
+          protein: 7,
+          iron: "6%",
+        },
+      ],
+    };
+  },
+  mounted() {
+    this.user = this.$auth.user;
+    console.log("user", this.user);
+    this.getRutina();
+  },
 
-        }
-
-    }
-
+  methods: {
+    async getRutina() {
+      let response = await this.$axios.get(
+        `/api/users/${this.user.uuid}/rutina`
+      );
+      this.item = response.data;
+      this.dias = response.data.dia;
+      console.log("dia", this.dias);
+      console.log(this.item);
+    },
+  },
+};
 </script>
 
 <style scoped>
-  .v-sheet--offset {
-    top: -24px;
-    position: relative;
-  }
+.v-sheet--offset {
+  top: -24px;
+  position: relative;
+}
 </style>

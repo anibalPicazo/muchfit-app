@@ -1,4 +1,3 @@
-import colors from 'vuetify/es5/util/colors'
 require('dotenv').config()
 
 const config = {
@@ -9,7 +8,7 @@ const config = {
       devtools: (process.env.NODE_ENV !== 'production')
     }
   },
-  generate:{
+  generate: {
     devtools: (process.env.NODE_ENV !== 'production')
   },
   dev: (process.env.NODE_ENV !== 'production'),
@@ -45,8 +44,8 @@ const config = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    {src: '~/plugins/vuelidate', ssr: true},
-    {src: '~/plugins/vue-uuid', ssr: false},
+    { src: '~/plugins/vuelidate', ssr: true },
+    { src: '~/plugins/vue-uuid', ssr: false },
 
 
   ],
@@ -59,6 +58,7 @@ const config = {
     '@nuxtjs/vuetify',
     '@nuxtjs/auth',
 
+
   ],
   router: {
     middleware: ['auth']
@@ -67,19 +67,18 @@ const config = {
     strategies: {
       local: {
         endpoints: {
-          login: {url: "/api/auth", method: "post", propertyName: "token"},
+          login: { url: "/api/auth", method: "post", propertyName: "token" },
           logout: false,
-          user: {url: "/api/users/current", method: "get", propertyName: false}
+          user: false
         },
         // tokenRequired: true,
         // tokenType: 'bearer'
       }
     },
     redirect: {
-      login: "/login",
-      logout: "/",
+      login: "/dashboard",
+      logout: "/login",
       home: "/dashboard",
-      user: "/dashboard"
     }
   },
 
@@ -88,7 +87,7 @@ const config = {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    baseURL: process.env.BASE_URL
+    baseURL: 'http://localhost:4000'
   },
   /*
   ** vuetify module configuration

@@ -11,16 +11,18 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@mdi/font": "^7.3.67",
+    "@nuxt/loading-screen": "^2.0.4",
     "@nuxtjs/auth": "^4.8.4",
     "@nuxtjs/axios": "^5.8.0",
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/pwa": "^3.0.0-beta.19",
+    "handsontable": "^7.2.2",
     "nuxt": "^2.10.2",
     "typeface-ibm-plex-serif": "0.0.75",
     "vue-uuid": "^1.1.1",
     "vuelidate": "^0.7.4",
-    "vuetify-loader": "^1.4.3",
-    "handsontable": "^7.2.2"
+    "vuetify-loader": "^1.4.3"
   },
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.9.1",

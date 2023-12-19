@@ -8,26 +8,37 @@
       fixed
       app
       temporary
-      class="toolbar-fit">
+      class="toolbar-fit"
+    >
       <v-list>
         <v-layout mt-4 column align-center>
           <v-flex>
-            <v-avatar >
-              <v-img src="https://randomuser.me/api/portraits/men/85.jpg"></v-img>
+            <v-avatar>
+              <v-img
+                src="https://randomuser.me/api/portraits/men/85.jpg"
+              ></v-img>
             </v-avatar>
           </v-flex>
           <v-flex class="mt-3">
-            <p style="color: white"> Anibal Picazo </p>
+            <p style="color: white">Anibal Picazo</p>
             <v-spacer></v-spacer>
             <v-list-item class="ma-1 shadow-1 ml-4">
               <v-list-item-content>
                 <div class="overline">
-                 <v-btn id="logout" color="grey darken-3" elevation="0" @click="logout"> <v-icon color="error" class="mr-3">mdi-location-exit</v-icon></v-btn>
+                  <v-btn
+                    id="logout"
+                    color="grey darken-3"
+                    elevation="0"
+                    @click="logout"
+                  >
+                    <v-icon color="error" class="mr-3"
+                      >mdi-location-exit</v-icon
+                    ></v-btn
+                  >
                 </div>
               </v-list-item-content>
             </v-list-item>
           </v-flex>
-
         </v-layout>
         <v-list-item
           v-for="(item, i) in items"
@@ -52,87 +63,85 @@
       :clipped-left="clipped"
       fixed
       app
-      color="primary" dark style="box-shadow: none !important;"
+      color="primary"
+      dark
+      style="box-shadow: none !important"
     >
-      <v-btn id="btnmenu"  @click.stop="drawer = !drawer" icon> <v-icon> mdi-menu</v-icon>  </v-btn>
+      <v-btn id="btnmenu" @click.stop="drawer = !drawer" icon>
+        <v-icon> mdi-menu</v-icon>
+      </v-btn>
 
-
-      <v-avatar><img src="../assets/images/logov1peq.png" alt="avatar"> </v-avatar>
+      <v-avatar
+        ><img src="../assets/images/logov1peq.png" alt="avatar" />
+      </v-avatar>
     </v-app-bar>
-
   </div>
 </template>
 <script>
-  export default {
-    name: "toolbar",
-    data () {
-      return {
-        clipped: false,
-        drawer: false,
-        fixed: false,
-        items: [
-          {
-            icon: 'mdi-apps',
-            title: 'Panel de control',
-            to: '/dashboard',
-            id:'dasboard'
-          },
-          {
-            icon: 'mdi-book-open-page-variant',
-            title: 'Cuaderno de entrenamiento',
-            to: '/inspire'
-          },
-          {
-            icon: 'mdi-weight-lifter',
-            title: 'Mi Rutina',
-            to: '/rutina',
-            id: 'rutina'
-          },{
-            icon: 'mdi-food-apple',
-            title: 'Mi Dieta',
-            to: '/dieta',
-            id: 'dieta'
-          },
-          {
-            icon: 'mdi-clipboard-alert-outline',
-            title: 'Test Nutricional',
-            to: '/test_nutricional',
-            id: 'testNutricion'
-          },
-          {
-            icon: 'mdi-clipboard-pulse',
-            title: 'Test Rutina',
-            to: '/test_entrenamiento',
-            id:'testEntrenamiento'
-
-          }
-
-        ],
-        miniVariant: false,
-        title: 'Much Fit'
-      }
-    },
-    methods:{
-        logout() {
-            this.$auth.logout()
-            this.$router.push("/login")
+export default {
+  name: "toolbar",
+  data() {
+    return {
+      clipped: false,
+      drawer: false,
+      fixed: false,
+      items: [
+        {
+          icon: "mdi-apps",
+          title: "Panel de control",
+          to: "/dashboard",
+          id: "dasboard",
         },
-        manageView(item){
-         if(item.title === 'Mi Rutina'){
-             return !! this.$auth.user.rutina;
-         }
-         if(item.title === 'Mi Dieta'){
-             return !! this.$auth.user.dieta;
 
-         }
-         return true;
+        // {
+        //   icon: "mdi-weight-lifter",
+        //   title: "Asignar entrenamiento",
+        //   to: "/workout",
+        //   id: "workout",
+        // },
+        {
+          icon: "mdi-dumbbell",
+          title: "Ejercicios",
+          to: "/exercises",
+          id: "exercises",
+        },
+        {
+          icon: "mdi-arm-flex",
+          title: "Grupos musculares",
+          to: "/muscleGroups",
+          id: "muscleGroups",
+        },
+        // {
+        //   icon: "mdi-account",
+        //   title: "Usuario",
+        //   to: "/users",
+        //   id: "users",
+        // },
+      ],
+      miniVariant: false,
+      title: "Much Fit",
+    };
+  },
+  methods: {
+    logout() {
+      this.$auth.logout();
+      this.$router.push("/login");
+    },
+    manageView(item) {
+      //  if(item.title === 'Mi Rutina'){
+      //      return !! this.$auth.user.rutina;
+      //  }
+      //  if(item.title === 'Mi Dieta'){
+      //      return !! this.$auth.user.dieta;
 
-        }
-    }
-  }
+      //  }
+      return true;
+    },
+  },
+};
 </script>
 <style>
-  .toolbar-fit{
-    background-image: url("../assets/images/leftbar.jpg");
-  }
+.toolbar-fit {
+  /* background-image: url("../assets/images/leftbar.jpg"); */
+}
 </style>
