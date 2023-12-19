@@ -15,13 +15,13 @@ instance_class: F2
 
 handlers:
   # Serve all static files with urls ending with a file extension
-  -   url: /(.*\..+)$
-      static_files: dist/\1
-      upload: dist/(.*\..+)$
+  - url: /(.*\..+)$
+    static_files: dist/\1
+    upload: dist/(.*\..+)$
     # catch all handler to index.html
-  -   url: /.*
-      static_files: dist/200.html
-      upload: dist/200.html
+  - url: /.*
+    static_files: dist/200.html
+    upload: dist/200.html
 
 #  - url: /_nuxt
 #    static_dir: dist
@@ -37,6 +37,6 @@ handlers:
 #    secure: always
 
 env_variables:
-  HOST: '0.0.0.0'
-  NODE_ENV: 'production'
-  BASE_URL: 'https://muchfit-api-dot-muchfit.appspot.com/api/'
+  HOST: "0.0.0.0"
+  NODE_ENV: "production"
+  BASE_URL: "be-water-my-plant-backend-production.up.railway.app/api/"
